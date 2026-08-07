@@ -1,0 +1,277 @@
+/* Google ドキュメント風の Sanity Studio 編集画面
+   （グレーのキャンバス上に白い紙／中央寄せ／落ち着いたサンセリフ）。
+   パフォーマンスのため重い装飾は使わない。 */
+
+.cryptoblog-gdocs-studio {
+  --gdocs-border: #dadce0;
+  --gdocs-border-strong: #bdc1c6;
+  --gdocs-canvas: #f1f3f4;
+  --gdocs-paper: #ffffff;
+  --gdocs-header-bg: #f8f9fa;
+  --gdocs-text: #202124;
+  --gdocs-muted: #5f6368;
+  --gdocs-focus: #1a73e8;
+  --gdocs-line-height: 1.75;
+  --gdocs-font: "Google Sans", Roboto, -apple-system, "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+
+  /* このラッパーで囲むと高さ指定が無く、Studio 内部の height:100% チェーンが
+     切れてコンテンツ分だけ縦に伸び、ウィンドウ全体がスクロールしてしまう。
+     （表など背の高いブロック編集ダイアログを開くと顕著。）
+     ここで画面高に固定し、スクロールは Sanity 内部のペインに任せる。 */
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cryptoblog-gdocs-studio > * {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* サイドペイン幅の調整（Sanity 標準ハンドルは幅ロックでほぼ動かない） */
+/* ------------------------------------------------------------------ */
+
+.cryptoblog-gdocs-studio {
+  --cryptoblog-side-width: 280px;
+  position: relative;
+}
+
+/*
+ * Sanity の一覧ペインは JS 側で min≈320 / currentMax≈350 に固定されており、
+ * 標準の分割ハンドルでは実質ほとんど幅が変わらない。
+ * インライン style より強い !important で幅を上書きする。
+ */
+.cryptoblog-gdocs-studio [data-ui="ListPane"],
+.cryptoblog-gdocs-studio [data-ui="DocumentListPane"],
+.cryptoblog-gdocs-studio [data-testid="structure-tool-list-pane"] {
+  flex: 0 0 var(--cryptoblog-side-width) !important;
+  width: var(--cryptoblog-side-width) !important;
+  min-width: var(--cryptoblog-side-width) !important;
+  max-width: var(--cryptoblog-side-width) !important;
+}
+
+/* 折りたたみ時は Sanity の狭いレール幅を優先 */
+.cryptoblog-gdocs-studio [data-ui="ListPane"][data-pane-collapsed],
+.cryptoblog-gdocs-studio [data-ui="DocumentListPane"][data-pane-collapsed],
+.cryptoblog-gdocs-studio [data-testid="structure-tool-list-pane"][data-pane-collapsed] {
+  flex: 0 0 51px !important;
+  width: 51px !important;
+  min-width: 51px !important;
+  max-width: 51px !important;
+}
+
+/* 文書ペイン左端：ドラッグでサイド幅を変えるハンドル（位置は JS で指定） */
+.cryptoblog-pane-resizer {
+  position: fixed;
+  width: 10px;
+  z-index: 30000;
+  cursor: col-resize;
+  touch-action: none;
+  background: transparent;
+}
+
+.cryptoblog-pane-resizer:hover,
+.cryptoblog-pane-resizer:active {
+  background: rgba(26, 115, 232, 0.22);
+}
+
+.cryptoblog-pane-resizer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+  background: rgba(26, 115, 232, 0.55);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.cryptoblog-pane-resizer:hover::after,
+.cryptoblog-pane-resizer:active::after {
+  opacity: 1;
+}
+
+/* Sanity 標準の細い Layer ハンドルは見た目だけ控えめに（誤認防止） */
+.cryptoblog-gdocs-studio [data-ui="PaneLayout"] > [data-ui="Layer"] {
+  pointer-events: none !important;
+  opacity: 0.35;
+}
+
+/* ドキュメントペインの Container 上限を外し、広げた分本文が広がる */
+.cryptoblog-gdocs-studio [data-testid="document-panel-scroller"],
+.cryptoblog-gdocs-studio [data-testid="document-panel-scroller"] [data-ui="Container"],
+.cryptoblog-gdocs-studio [data-ui="DocumentPanel"] [data-ui="Container"] {
+  max-width: none !important;
+  width: 100%;
+}
+
+/* ドキュメントペイン：白い紙を載せるグレーの台紙 */
+.cryptoblog-gdocs-studio [data-ui="DocumentPanel"],
+.cryptoblog-gdocs-studio [data-testid="document-panel-scroller"],
+.cryptoblog-gdocs-studio [data-ui="ScrollContainer"] {
+  background: var(--gdocs-canvas);
+}
+
+/* フォームはペイン幅いっぱいに追従 */
+.cryptoblog-gdocs-studio form[data-ui="FormBuilder"] {
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 20px 72px;
+  box-sizing: border-box;
+}
+
+/* Portable Text（body 以外の配列）用の白紙 */
+.cryptoblog-gdocs-pte-canvas {
+  background: var(--gdocs-paper);
+  border: 1px solid var(--gdocs-border);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.14);
+  padding: 24px 32px 32px;
+  min-height: 420px;
+  overflow: visible;
+}
+
+.cryptoblog-gdocs-pte-canvas [data-slate-editor] {
+  font-family: var(--gdocs-font);
+  font-size: 11pt;
+  line-height: var(--gdocs-line-height);
+  color: var(--gdocs-text);
+  min-height: 360px;
+  outline: none;
+  overflow: visible;
+}
+
+.cryptoblog-gdocs-pte-canvas [data-text] {
+  overflow: visible;
+  min-width: 0;
+}
+
+.cryptoblog-gdocs-pte-canvas [data-wrapper] {
+  overflow: visible;
+}
+
+/* PTE ツールバー：GDocs 風の細いバー */
+.cryptoblog-gdocs-pte-canvas > [data-wrapper] > [data-ui="Card"]:first-child,
+.cryptoblog-block-editor > [data-wrapper] > [data-ui="Card"]:first-child {
+  border: none;
+  border-bottom: 1px solid var(--gdocs-border);
+  border-radius: 0;
+  margin: 0 0 16px;
+  padding: 6px 0 !important;
+  background: transparent !important;
+}
+
+/* テキストエリア（抜粋など）：フォントを本文とそろえる */
+.cryptoblog-gdocs-text-canvas {
+  background: var(--gdocs-paper);
+  border: 1px solid var(--gdocs-border);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.1);
+  padding: 12px 16px;
+}
+
+.cryptoblog-gdocs-text-canvas textarea {
+  font-family: var(--gdocs-font) !important;
+  font-size: 11pt !important;
+  line-height: var(--gdocs-line-height) !important;
+  color: var(--gdocs-text) !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  resize: vertical;
+  min-height: 5em;
+}
+
+/* 1行テキスト（タイトルなど）：下線ガイド付き */
+.cryptoblog-gdocs-string-canvas {
+  background: var(--gdocs-paper);
+  border: 1px solid var(--gdocs-border);
+  border-radius: 2px;
+  padding: 8px 12px;
+}
+
+.cryptoblog-gdocs-string-canvas input {
+  font-family: var(--gdocs-font) !important;
+  font-size: 12pt !important;
+  color: var(--gdocs-text) !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-bottom: 1px solid var(--gdocs-border) !important;
+  border-radius: 0 !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* テーブルエディタ（自作）：Google ドキュメント風の細いグリッド        */
+/* ------------------------------------------------------------------ */
+
+.cryptoblog-gdocs-table-editor table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-family: var(--gdocs-font);
+}
+
+.cryptoblog-gdocs-table-editor td.cryptoblog-gdocs-cell {
+  border: 1px solid var(--gdocs-border);
+  padding: 0;
+  vertical-align: top;
+  background: var(--gdocs-paper);
+  overflow-anchor: none;
+}
+
+.cryptoblog-gdocs-table-editor .cryptoblog-gdocs-cell textarea {
+  overflow-anchor: none;
+}
+
+/* 表ダイアログ表示中は背後の文書スクロールが勝手に動かないようにする */
+.cryptoblog-gdocs-studio:has([data-ui="DialogCard"])
+  [data-testid="document-panel-scroller"] {
+  overflow-anchor: none;
+  scroll-behavior: auto !important;
+}
+
+/* 先頭行を見出し風にうっすら強調 */
+.cryptoblog-gdocs-table-editor
+  tbody
+  tr.cryptoblog-gdocs-datarow:first-of-type
+  td.cryptoblog-gdocs-cell {
+  background: var(--gdocs-header-bg);
+  font-weight: 500;
+}
+
+.cryptoblog-gdocs-table-editor .cryptoblog-gdocs-cell input,
+.cryptoblog-gdocs-table-editor .cryptoblog-gdocs-cell textarea {
+  font-family: var(--gdocs-font) !important;
+  font-size: 11pt !important;
+  color: var(--gdocs-text) !important;
+  line-height: 1.5 !important;
+  white-space: pre-wrap;
+}
+
+/* 行・列の削除ハンドルは通常は薄く、ホバー時にはっきり見せる */
+.cryptoblog-gdocs-table-editor .cryptoblog-gdocs-handle {
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.cryptoblog-gdocs-table-editor tr:hover .cryptoblog-gdocs-handle,
+.cryptoblog-gdocs-table-editor:hover
+  .cryptoblog-gdocs-colhandles
+  .cryptoblog-gdocs-handle {
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .cryptoblog-gdocs-pte-canvas {
+    padding: 16px;
+  }
+}

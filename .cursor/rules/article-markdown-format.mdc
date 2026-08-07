@@ -1,0 +1,86 @@
+---
+description: cryptoblog の articles/*.md 書式（Front Matter・装飾フェンス・清掃・categories）
+globs: articles/**/*.md
+alwaysApply: false
+---
+
+# article-markdown-format（cryptoblog）
+
+`articles/` の Markdown を編集・清掃・新規作成するとき、この書式を守る。入稿は `md-to-sanity-decorated-jp` / `wp-to-sanity-migration-jp`。
+
+## Front Matter
+
+必須: `title`, `slug`, `publishedAt`（`YYYY-MM-DD`）  
+推奨: `excerpt`, `heroImage`（画像の https 直 URL）, `heroImageAlt`  
+ハブ掲載用: `categories` は `src/lib/siteStructure.ts` の `HUBS[].category` と**完全一致**（例: `仮想通貨` / `NFT` / `メタバース` / `DeFi`）
+
+```yaml
+---
+title: "記事タイトル"
+slug: example-slug
+publishedAt: 2023-11-26
+excerpt: "一覧用の1〜2文"
+heroImage: https://snooks.xsrv.jp/wp-content/uploads/...
+heroImageAlt: "短い説明"
+categories:
+  - 仮想通貨
+---
+```
+
+## 削除する / 残す
+
+**削除:** 単独行の `広告`・`目次`、`## 関連記事` 以降すべて、サイドバー残骸、カテゴリだけのリンク行、**小さい装飾イラスト単独**  
+**残す:** A8 / af 等のアフィリエイト URL、必要な PR 文言、`:::speech`、GFM 表、`heroImage`、本文の大きい図解・写真
+
+### 小さい装飾イラスト（必須デフォルト・三重）
+
+1. **MD:** 次を含む単独画像行は削除 — `*-150x150.*` / `kaisya_*` / `fukidashi` / `questioner-*`（例: `kaisya_komaru_man-150x150.png`）  
+2. **変換:** `isDecorativeSkipImageUrl` が本文 image 化を拒否  
+3. **表示:** 寸法 ≤200px、または上記ファイル名パターンは描画しない  
+
+`:::titled-box` の `avatar:` は対象外（枠内アバターとして残す）。
+
+## 装飾マーカー（変換前提）
+
+| 意図 | 書き方 |
+|---|---|
+| 吹き出し | `:::speech`（閉じ `:::` は単独行）。`speaker` / `side: left\|right` / `tone` |
+| 囲み | `:::titled-box` または `**タイトル**` + 箇条書き |
+| FAQ | `## 質問と回答`（or `よくある質問`）+ 各問 `###`。**FAQ の H2 は消さない** |
+| 関連 | `あわせて読みたい` → 画像 → 記事リンク（この順） |
+
+```markdown
+:::speech
+speaker: ひよこ忍者
+side: right
+tone: sky
+
+本文
+:::
+```
+
+## サイト運営者の情報（必須・全記事共通デフォルト）
+
+`**記事の信頼性**` や WP 由来の旧プロフィールは使わない。次を **そのまま** 入れる（文言変更禁止。例外はユーザー明示時のみ）。
+
+```markdown
+:::titled-box
+title: サイト運営者の情報
+style: band
+avatar: yanohide
+avatarCaption: ひよこ忍者
+
+- 本業： 介護施設の職員（歴18年）
+- 副業： AIを活用したブログ運営＆仮想通貨投資で資産運用
+- 資格： 2級FP技能士×ケアマネ
+- ミッション： 学びながら稼ぐ！「AI×仮想通貨」で老後やインフレに備える資産防衛術をお届けします。
+- 一言： 読書好きのアラフィフ2児のパパです。
+:::
+```
+
+## 禁止
+
+- アフィリエイト URL の削除・差し替え（ユーザー指示がある場合のみ可）
+- FAQ 見出し H2 の削除（目次・アンカーが壊れる）
+- `categories` にハブに無い任意ラベルを付けること
+- 「記事の信頼性」枠のまま残すこと／運営者枠の文言を記事ごとに変えること

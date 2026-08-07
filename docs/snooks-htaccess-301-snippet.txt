@@ -1,0 +1,22 @@
+# === snooks → sonoke.com 301（このブロックを .htaccess の先頭付近に追加）===
+# 置き場所: WordPress の .htaccess で、「# BEGIN WordPress」より上
+# 注意: RewriteCond は「直後の RewriteRule 1本」にしか効かない。
+#       記事ルールにも同じ除外を付けないと /wp-admin が sonoke.com/posts/wp-admin に飛ぶ。
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# トップ → sonoke.com
+RewriteRule ^$ https://sonoke.com/ [R=301,L]
+
+# 管理画面・画像・ログインは飛ばさない（解約前は残す）
+# ※この Cond は「次の RewriteRule（記事用）」にだけ効く
+RewriteCond %{REQUEST_URI} !^/wp-admin
+RewriteCond %{REQUEST_URI} !^/wp-login\.php
+RewriteCond %{REQUEST_URI} !^/wp-content
+RewriteCond %{REQUEST_URI} !^/wp-includes
+RewriteCond %{REQUEST_URI} !^/xmlrpc\.php
+
+# 記事 /slug/ → /posts/slug
+RewriteRule ^([^/]+)/?$ https://sonoke.com/posts/$1 [R=301,L]
+</IfModule>
+# === /snooks → sonoke.com ===

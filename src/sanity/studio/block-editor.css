@@ -1,0 +1,121 @@
+/* 本文（body）を Google ドキュメント風の「1枚の白い紙」に見せる。
+   重い装飾（罫線グラデ・¶マーク・:has・毎入力の box-shadow）は
+   パフォーマンスのため使わない。 */
+
+.cryptoblog-block-editor {
+  background: var(--gdocs-paper, #fff);
+  border: 1px solid var(--gdocs-border, #dadce0);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.14);
+  padding: 28px 36px 64px;
+  min-height: min(85vh, 1200px);
+}
+
+.cryptoblog-block-editor__hint {
+  display: block;
+  margin: -4px 0 16px;
+  padding: 8px 12px;
+  color: var(--gdocs-muted, #5f6368);
+  background: var(--gdocs-header-bg, #f8f9fa);
+  border: 1px solid var(--gdocs-border, #dadce0);
+  border-radius: 6px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+/* 編集面 */
+.cryptoblog-block-editor [data-wrapper] {
+  overflow: visible;
+}
+
+.cryptoblog-block-editor [data-slate-editor] {
+  min-height: min(72vh, 960px);
+  font-family: var(--gdocs-font, "Google Sans", Roboto, Arial, sans-serif);
+  font-size: 11pt;
+  line-height: 1.75;
+  color: var(--gdocs-text, #202124);
+  outline: none;
+}
+
+/* 段落ブロック：ほどよい行間・余白。フォーカス枠などの装飾は付けない */
+.cryptoblog-block-editor [data-testid="text-block__text"] {
+  margin: 0 0 2px;
+  padding: 1px 0;
+}
+
+.cryptoblog-block-editor [data-text] {
+  overflow: visible;
+  min-width: 0;
+}
+
+/* 見出し：Google ドキュメントのように本文より大きく、余白を広めに */
+.cryptoblog-block-editor h2,
+.cryptoblog-block-editor [data-style="h2"] {
+  font-size: 17pt;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #202124;
+  margin: 22px 0 4px;
+}
+
+.cryptoblog-block-editor h3,
+.cryptoblog-block-editor [data-style="h3"] {
+  font-size: 14pt;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #3c4043;
+  margin: 18px 0 4px;
+}
+
+.cryptoblog-block-editor h4,
+.cryptoblog-block-editor [data-style="h4"] {
+  font-size: 12pt;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #3c4043;
+  margin: 14px 0 4px;
+}
+
+.cryptoblog-block-editor blockquote,
+.cryptoblog-block-editor [data-style="blockquote"] {
+  border-left: 3px solid var(--gdocs-border-strong, #bdc1c6);
+  padding-left: 16px;
+  color: var(--gdocs-muted, #5f6368);
+}
+
+/* 画像・表などのオブジェクトブロック：クリーンなカード */
+.cryptoblog-wp-block {
+  margin: 16px 0;
+  background: var(--gdocs-paper, #fff);
+  border: 1px solid var(--gdocs-border, #dadce0);
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.08);
+}
+
+.cryptoblog-wp-block[data-focused="true"],
+.cryptoblog-wp-block[data-selected="true"] {
+  border-color: var(--gdocs-focus, #1a73e8);
+  box-shadow: 0 0 0 1px var(--gdocs-focus, #1a73e8);
+}
+
+.cryptoblog-wp-block__label {
+  font-family: var(--gdocs-font, "Google Sans", Roboto, Arial, sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--gdocs-muted, #5f6368);
+  padding: 6px 12px;
+  background: var(--gdocs-header-bg, #f8f9fa);
+  border-bottom: 1px solid var(--gdocs-border, #dadce0);
+}
+
+.cryptoblog-wp-block__content {
+  padding: 8px 12px 12px;
+}
+
+@media (max-width: 720px) {
+  .cryptoblog-block-editor {
+    padding: 24px 20px 32px;
+  }
+}
