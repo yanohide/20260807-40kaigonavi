@@ -1,7 +1,6 @@
 /** WP ホーム再現用の静的アセット（public/images/ 配下） */
 import {
   OPERATOR_AVATAR,
-  OPERATOR_PROFILE_LINES,
   OPERATOR_PROFILE_NAME,
 } from "@/lib/operatorProfile";
 
@@ -108,7 +107,14 @@ export function pickPostsBySlugs<T extends HomeSidebarPostRef>(
 
 export const HOME_OPERATOR_PROFILE = {
   name: OPERATOR_PROFILE_NAME,
+  credentials: "PT・ケアマネ・FP2級",
   caption: OPERATOR_PROFILE_NAME,
   textHeading: "【当サイトの運営者】",
-  lines: OPERATOR_PROFILE_LINES,
+  lines: [
+    "経歴： 介護分野17年のリハビリ専門家",
+    "活動： アラフィフのFPとしても活動中",
+    "家族： 2人の子育てパパで、遠くに住む両親の健康状態も気にかける毎日",
+    "発信： 介護とお金のダブルライセンスを活かし、40歳からの介護のなやみに役立つ情報をわかりやすく発信中",
+    "ミッション： なやみが解決できるよう、やさしくナビゲートします",
+  ],
 } as const;

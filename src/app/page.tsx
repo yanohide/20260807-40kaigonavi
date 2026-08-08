@@ -4,6 +4,7 @@ import Link from "next/link";
 import { OperatorProfileWidget } from "@/components/OperatorProfileWidget";
 import { PostCard, type PostCardItem } from "@/components/PostCard";
 import { SidebarPostPanel } from "@/components/SidebarPostPanel";
+import { SidebarSearchForm } from "@/components/SidebarSearchForm";
 import {
   HOME_ASSETS,
   HOME_POPULAR_POST_SLUGS,
@@ -59,6 +60,7 @@ export default async function HomePage() {
           </section>
 
           <aside className="home-sidebar">
+            <SidebarSearchForm />
             <OperatorProfileWidget />
             <SidebarPostPanel title="人気記事" posts={popularPosts} />
             <SidebarPostPanel title="おすすめ記事" posts={recommendedPosts} />

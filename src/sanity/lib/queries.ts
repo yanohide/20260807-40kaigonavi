@@ -55,6 +55,21 @@ export const POST_SLUGS_QUERY = defineQuery(
 );
 
 /** サイトマップ用：公開日時付きの slug 一覧 */
+export const SEARCH_POSTS_QUERY = defineQuery(
+  `*[_type == "post" && (
+    title match $term ||
+    excerpt match $term
+  )] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    excerpt,
+    categories,
+    heroImage
+  }`,
+);
+
 export const SITEMAP_POSTS_QUERY = defineQuery(
   `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
     "slug": slug.current,

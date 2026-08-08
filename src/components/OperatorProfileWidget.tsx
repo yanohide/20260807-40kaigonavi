@@ -30,12 +30,15 @@ export function OperatorProfileWidget() {
           <Image
             src={HOME_ASSETS.profileImage}
             alt={HOME_OPERATOR_PROFILE.caption}
-            width={160}
-            height={160}
+            width={96}
+            height={96}
             className="profile-widget-avatar-img"
           />
         </div>
         <p className="profile-widget-name">{HOME_OPERATOR_PROFILE.name}</p>
+        <p className="profile-widget-credentials">
+          {HOME_OPERATOR_PROFILE.credentials}
+        </p>
         <div className="profile-widget-text">
           <p className="profile-widget-text-heading">
             {HOME_OPERATOR_PROFILE.textHeading}
