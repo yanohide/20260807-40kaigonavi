@@ -7,8 +7,11 @@
   --color-surface: #f7f7f5;
   --color-ink: #333333;
   --color-muted: #666666;
-  --color-taupe: #8c8574;
-  --color-taupe-deep: #6f695b;
+  /* 見出し・表・タイトル枠などの共通アクセント */
+  --color-accent: #938d81;
+  --color-accent-deep: #7a756b;
+  --color-taupe: #938d81;
+  --color-taupe-deep: #7a756b;
   --color-bubble: #c5dced;
   --color-bubble-border: #c5dced;
   --color-highlight: #fdecee;
@@ -17,7 +20,7 @@
   --color-link: #3a6ea5;
   --color-warning: #a65d5d;
   --color-memo: #d4a84b;
-  --color-navy: #3a4a5c;
+  --color-navy: #938d81;
   --color-header-bg: #fdfdfd;
   --color-header-text: #545454;
   --color-header-border: #f7f7f7;
@@ -28,11 +31,11 @@
   --color-parchment: #f7f7f5;
   --color-espresso: #333333;
   --color-walnut: #666666;
-  --color-burgundy: #8c8574;
-  --color-burgundy-deep: #6f695b;
-  --color-gold: #8c8574;
-  --color-gold-bright: #a39c8a;
-  --color-navy-deep: #2a3644;
+  --color-burgundy: #938d81;
+  --color-burgundy-deep: #7a756b;
+  --color-gold: #938d81;
+  --color-gold-bright: #a8a295;
+  --color-navy-deep: #7a756b;
   --color-panel-gray: #d4d4d4;
   --color-pickup-gray: #e0e0e0;
   --color-profile-avatar-bg: #9ec8eb;
@@ -979,16 +982,35 @@
   text-decoration: underline;
 }
 
-@media (min-width: 900px) {
-  .post-card-grid--home {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+/* トップ新着：3列に収めるためカードをコンパクトに */
+.post-card-grid--home .post-card-media {
+  padding: 8px 8px 0;
 }
 
-@media (min-width: 1100px) {
-  .post-card-grid--home {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.post-card-grid--home .post-card-media-frame {
+  border-radius: 8px;
+}
+
+.post-card-grid--home .post-card-body {
+  padding: 0.65rem 0.75rem 0.8rem;
+}
+
+.post-card-grid--home .post-card-title {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  margin-bottom: 0.3rem;
+}
+
+.post-card-grid--home .post-card-excerpt {
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  -webkit-line-clamp: 2;
+}
+
+.post-card-grid--home .post-meta {
+  font-size: 0.72rem;
+  margin-top: 0.25rem;
 }
 
 .hub-link-list {
@@ -1020,6 +1042,11 @@
 @media (min-width: 640px) {
   .post-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .post-card-grid.post-card-grid--home {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
   }
 }
 
@@ -1214,6 +1241,35 @@
 
   .app-reach-card-title {
     font-size: 0.92rem;
+  }
+}
+
+/* サービス紹介カード（WP cap_box + 2カラムボタン相当） */
+.service-promo-card-points ul {
+  margin: 0;
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.service-promo-card-points li + li {
+  margin-top: 0.65rem;
+}
+
+.service-promo-card-points li strong {
+  font-weight: 700;
+}
+
+.prose-blog .service-promo-card-btn,
+.prose-blog .service-promo-card-btn span,
+.prose-blog .service-promo-card-btn svg {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 639px) {
+  .service-promo-card-icon-img,
+  .prose-blog .service-promo-card-icon-img {
+    max-width: 120px;
   }
 }
 
@@ -1518,18 +1574,23 @@
   border-radius: 0;
 }
 
-/* 本文 figure：実寸を超えて拡大しない（スマホスクショ等） */
+/* 本文 figure：章アイキャッチ等は本文幅いっぱいに表示 */
 .prose-blog figure {
   margin: 1.75rem 0;
   text-align: center;
 }
 
 .prose-blog figure img {
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
   display: block;
+}
+
+/* スマホスクショ等の小さい画像だけ実寸（拡大しない） */
+.prose-blog figure img.figure-img--natural {
+  width: auto;
 }
 
 /* 吹き出しアイコンは本文画像スタイルの影響を受けない */
@@ -1649,6 +1710,33 @@
   text-align: left;
 }
 
+.article-table th.is-icon,
+.article-table td.is-icon {
+  text-align: center;
+  vertical-align: middle;
+  min-width: 5.5rem;
+  max-width: 6.5rem;
+}
+
+.article-table-icon {
+  display: block;
+  width: 80px;
+  height: 80px;
+  max-width: 80px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.article-table-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.article-table-link:hover {
+  color: var(--color-taupe-deep);
+}
+
 .article-table tr > *:last-child {
   border-right: none;
 }
@@ -1658,8 +1746,8 @@
 }
 
 .article-table thead th {
-  /* 見出し（.section-bar / h3）と同じ紺色 */
-  background: #2c3e6b;
+  /* 見出し（.section-bar / h3）と同じアクセント色 */
+  background: var(--color-accent);
   color: #fff;
   font-weight: 700;
 }
@@ -1685,7 +1773,7 @@
 
 .article-table thead th:first-child {
   z-index: 2;
-  background: #2c3e6b;
+  background: var(--color-accent);
 }
 
 .article-table tbody tr:nth-child(odd) > *:first-child {
@@ -1717,8 +1805,8 @@
   }
 
   .article-table tr > *:first-child {
-    min-width: 6em;
-    max-width: 12em;
+    min-width: 7em;
+    max-width: 14em;
   }
 }
 
@@ -1745,7 +1833,7 @@
 .prose-blog > ol.article-plain-list {
   margin: 2.5rem 0;
   padding: 1.25rem 1.25rem 1.25rem 2.25rem;
-  border: 2px solid #2c3e6b;
+  border: 2px solid var(--color-accent);
   background: #fff;
 }
 
@@ -1756,6 +1844,13 @@
 .prose-blog a {
   color: var(--color-link);
   text-underline-offset: 3px;
+}
+
+/* SWELL 風黄色蛍光マーカー（==…== / highlight デコレータ） */
+@utility text-marker-yellow {
+  background-image: linear-gradient(transparent 64%, #fcf69f 64%, #fcf69f 100%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 /* 装飾ブロック内のボタンは本文リンク色を引き継がない */
@@ -1775,7 +1870,7 @@
   width: 100%;
   margin: 2.75rem 0 1.25rem;
   padding: 0.85rem 1.15rem;
-  background: #2c3e6b;
+  background: var(--color-accent);
   color: #fff;
   font-family: var(--font-sans-jp);
   font-size: 1.05rem;
@@ -1794,7 +1889,7 @@
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #2c3e6b;
+  color: #333;
 }
 
 .prose-blog h3::after {
@@ -1805,7 +1900,7 @@
   display: block;
   width: 25%;
   height: 4px;
-  background: #2c3e6b;
+  background: var(--color-accent);
 }
 
 .prose-blog h4 {
@@ -1816,7 +1911,7 @@
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #2c3e6b;
+  color: #333;
 }
 
 .prose-blog h4::before {
@@ -1827,7 +1922,85 @@
   bottom: 0.15em;
   width: 6px;
   border-radius: 2px;
-  background: #2c3e6b;
+  background: var(--color-accent);
+}
+
+/* 記事ページ：画面右下に追従するトップに戻る */
+.back-to-top {
+  position: fixed;
+  inset: auto clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vh, 1.75rem) auto;
+  z-index: 50;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.97);
+  color: var(--color-ink);
+  font-family: var(--font-sans-jp);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top--visible:active {
+  transform: translateY(1px);
+}
+
+.back-to-top:hover {
+  cursor: pointer;
+  background: var(--color-surface);
+  border-color: var(--color-accent-deep);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 3px;
+}
+
+.back-to-top__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.back-to-top__label {
+  writing-mode: horizontal-tb;
 }
 
 /* 光るタイプのボタン：ゆるく明滅する発光 */

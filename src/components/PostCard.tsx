@@ -15,9 +15,20 @@ export type PostCardItem = {
   } | null;
 };
 
-export function PostCard({ post }: { post: PostCardItem }) {
+export function PostCard({
+  post,
+  compact = false,
+}: {
+  post: PostCardItem;
+  compact?: boolean;
+}) {
+  const imageWidth = compact ? 420 : 640;
+  const imageHeight = compact ? 236 : 360;
   const imageUrl = post.heroImage
-    ? urlForImage(post.heroImage)?.width(640).height(360).url()
+    ? urlForImage(post.heroImage)
+        ?.width(imageWidth)
+        .height(imageHeight)
+        .url()
     : null;
 
   return (
@@ -29,8 +40,8 @@ export function PostCard({ post }: { post: PostCardItem }) {
             <img
               src={imageUrl}
               alt={post.heroImage?.alt || post.title}
-              width={640}
-              height={360}
+              width={imageWidth}
+              height={imageHeight}
             />
           ) : (
             <div className="post-card-placeholder" aria-hidden="true" />

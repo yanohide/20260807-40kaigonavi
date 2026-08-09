@@ -1,3 +1,5 @@
+import { TableCellRich, cellTextForAlign } from "@/components/blocks/TableCellRich";
+
 export type TableRow = { _key?: string; cells?: string[] };
 export type TableValue = { rows?: TableRow[] };
 
@@ -7,8 +9,7 @@ export type TableValue = { rows?: TableRow[] };
  * 「194.9万円以下」「総合課税」など文言付きはテキスト扱い。
  */
 export function isNumericCell(raw: string | undefined | null): boolean {
-  const t = String(raw ?? "")
-    .replace(/\*\*/g, "")
+  const t = cellTextForAlign(String(raw ?? ""))
     .replace(/[,，]/g, "")
     .trim();
   if (!t) return false;
@@ -19,9 +20,14 @@ function cellAlignClass(cell: string | undefined): string {
   return isNumericCell(cell) ? "is-num" : "is-text";
 }
 
+function isIconCell(cell: string | undefined): boolean {
+  const t = String(cell ?? "").trim();
+  return /^!\[[^\]]*\]\(https?:\/\/[^)\s]+\)$/.test(t);
+}
+
 /**
  * 記事用テーブル。
- * - セル：約 12 文字幅で折り返し（編集目安 8〜12／上限 16）
+ * - セル：リンク・画像・`<br>` 付き Markdown を描画
  * - 多列：ラッパーで横スクロール、左端列は sticky 固定
  * - 配置：数字は中央、テキストは左寄せ
  */
@@ -48,7 +54,7 @@ export function TableBlock({ value }: { value?: TableValue }) {
             <tr>
               {(headRow.cells ?? []).map((cell, i) => (
                 <th key={i} scope="col" className={cellAlignClass(cell)}>
-                  {cell}
+                  <TableCellRich value={cell ?? ""} />
                 </th>
               ))}
             </tr>
@@ -57,17 +63,24 @@ export function TableBlock({ value }: { value?: TableValue }) {
         <tbody>
           {bodyRows.map((row, ri) => (
             <tr key={row._key ?? ri}>
-              {(row.cells ?? []).map((cell, ci) =>
-                ci === 0 ? (
-                  <th key={ci} scope="row" className={cellAlignClass(cell)}>
-                    {cell}
+              {(row.cells ?? []).map((cell, ci) => {
+                const className = [
+                  cellAlignClass(cell),
+                  isIconCell(cell) ? "is-icon" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ");
+                const content = <TableCellRich value={cell ?? ""} />;
+                return ci === 0 ? (
+                  <th key={ci} scope="row" className={className}>
+                    {content}
                   </th>
                 ) : (
-                  <td key={ci} className={cellAlignClass(cell)}>
-                    {cell}
+                  <td key={ci} className={className}>
+                    {content}
                   </td>
-                ),
-              )}
+                );
+              })}
             </tr>
           ))}
         </tbody>

@@ -44,11 +44,56 @@ function hashPick(seed, modulo) {
   return h % modulo;
 }
 
+/** 表セル Portable Text → リンク/画像/改行を残した簡易 Markdown */
+function cellBlocksToMarkdown(blocks) {
+  const parts = [];
+  for (const block of blocks || []) {
+    if (block?._type === "image") {
+      const alt = String(block.alt || "");
+      const src = String(block.src || block.url || block.asset?.url || "");
+      if (src) parts.push(`![${alt}](${src})`);
+      continue;
+    }
+    if (block?._type !== "block") continue;
+
+    const markDefs = Array.isArray(block.markDefs) ? block.markDefs : [];
+    const children = Array.isArray(block.children) ? block.children : [];
+    const inline = [];
+
+    for (const child of children) {
+      if (child?._type === "break") {
+        inline.push("<br>");
+        continue;
+      }
+      if (child?._type !== "span") continue;
+
+      let text = String(child.text || "");
+      if (!text) continue;
+      const marks = Array.isArray(child.marks) ? child.marks : [];
+      const hasStrong = marks.includes("strong");
+      const linkKey = marks.find((m) =>
+        markDefs.some((d) => d?._key === m && d?._type === "link"),
+      );
+      const linkDef = linkKey
+        ? markDefs.find((d) => d?._key === linkKey && d?._type === "link")
+        : null;
+      if (hasStrong) text = `**${text}**`;
+      if (linkDef?.href) text = `[${text}](${linkDef.href})`;
+      inline.push(text);
+    }
+
+    if (inline.length) parts.push(inline.join("<br>"));
+  }
+  return parts.join("<br>").trim();
+}
+
 function mapTableToSanityTable({ context, value }) {
   const rows = (value.rows || []).map((row) => ({
     _key: row._key || context.keyGenerator(),
     cells: (row.cells || []).map((cell) => {
       const blocks = cell.value || [];
+      const rich = cellBlocksToMarkdown(blocks);
+      if (rich) return rich;
       return toPlainText(blocks).replace(/\s+/g, " ").trim();
     }),
   }));
@@ -635,6 +680,12 @@ function preprocessAffiliateCtas(md) {
 const LIST_ITEM_RE = /^(\s*[-*+]|\s*\d+\.)\s+/;
 const BOLD_TITLE_LINE_RE = /^\*\*([^*]+)\*\*\s*$/;
 const IMAGE_LINE_RE = /^!\[|^\[!\[/;
+const SERVICE_PROMO_TITLE_RE =
+  /^\s*(?:\*\*)?(.+?のおすすめポイント)(?:\*\*)?\s*$/;
+const DETAIL_LINK_RE = /^\[詳しい内容を見る\]\(([^)]+)\)\s*$/;
+const OFFICIAL_LINK_RE = /^\[公式サイトを見る\]\(([^)]+)\)\s*$/;
+const PLAIN_DETAIL_RE = /^詳しい内容を見る\s*$/;
+const PLAIN_OFFICIAL_RE = /^公式サイトを見る\s*$/;
 
 function isListItemLine(line) {
   return LIST_ITEM_RE.test(String(line || ""));
@@ -680,6 +731,128 @@ function collectListBlock(lines, start) {
     break;
   }
   return { listLines, end: j };
+}
+
+/**
+ * 「◯◯のおすすめポイント」＋アイコン＋リスト＋2リンク → servicePromoCard フェンス。
+ * preprocessEdgeListFrames より前に実行し、囲み枠リストへ二重変換しない。
+ */
+function preprocessServicePromoCards(md) {
+  const lines = md.replace(/\r\n/g, "\n").split("\n");
+  const out = [];
+  let i = 0;
+  let fenceDepth = 0;
+
+  while (i < lines.length) {
+    const trimmed = lines[i].trim();
+
+    if (/^:::[a-zA-Z]/.test(trimmed)) {
+      fenceDepth++;
+      out.push(lines[i]);
+      i++;
+      continue;
+    }
+    if (fenceDepth > 0 && /^:::\s*$/.test(trimmed)) {
+      fenceDepth = Math.max(0, fenceDepth - 1);
+      out.push(lines[i]);
+      i++;
+      continue;
+    }
+    if (fenceDepth > 0) {
+      out.push(lines[i]);
+      i++;
+      continue;
+    }
+
+    const titleMatch = SERVICE_PROMO_TITLE_RE.exec(trimmed);
+    if (!titleMatch) {
+      out.push(lines[i]);
+      i++;
+      continue;
+    }
+
+    const title = titleMatch[1].trim();
+    let j = i + 1;
+    while (j < lines.length && !lines[j].trim()) j++;
+
+    const imgLine = j < lines.length ? String(lines[j]).trim() : "";
+    const imgMatch = imgLine.match(/^!\[([^\]]*)\]\(([^)]+)\)/);
+    if (!imgMatch) {
+      out.push(lines[i]);
+      i++;
+      continue;
+    }
+    const iconAlt = imgMatch[1].replace(/\\_/g, "_").trim();
+    const iconUrl = imgMatch[2].trim();
+    j++;
+    while (j < lines.length && !lines[j].trim()) j++;
+
+    if (j >= lines.length || !isListItemLine(lines[j])) {
+      out.push(lines[i]);
+      i++;
+      continue;
+    }
+
+    const { listLines, end: listEnd } = collectListBlock(lines, j);
+    j = listEnd;
+    while (j < lines.length && !lines[j].trim()) j++;
+
+    let detailUrl = "";
+    let officialUrl = "";
+    let linkEnd = j;
+    while (linkEnd < lines.length) {
+      const lt = String(lines[linkEnd]).trim();
+      if (!lt) {
+        linkEnd++;
+        continue;
+      }
+      const detail = DETAIL_LINK_RE.exec(lt);
+      if (detail) {
+        detailUrl = detail[1].trim();
+        linkEnd++;
+        continue;
+      }
+      const official = OFFICIAL_LINK_RE.exec(lt);
+      if (official) {
+        officialUrl = official[1].trim();
+        linkEnd++;
+        continue;
+      }
+      if (PLAIN_DETAIL_RE.test(lt)) {
+        linkEnd++;
+        continue;
+      }
+      if (PLAIN_OFFICIAL_RE.test(lt)) {
+        linkEnd++;
+        continue;
+      }
+      break;
+    }
+
+    if (!detailUrl && officialUrl) detailUrl = officialUrl;
+    if (!officialUrl && detailUrl) officialUrl = detailUrl;
+    if (!detailUrl) {
+      out.push(lines[i]);
+      i++;
+      continue;
+    }
+
+    out.push(
+      ":::service-promo",
+      `title: ${title}`,
+      `icon: ${iconUrl}`,
+      ...(iconAlt ? [`iconAlt: ${iconAlt}`] : []),
+      `detailUrl: ${detailUrl}`,
+      `officialUrl: ${officialUrl}`,
+      "",
+      ...listLines,
+      ":::",
+      "",
+    );
+    i = linkEnd;
+  }
+
+  return out.join("\n").replace(/\n{3,}/g, "\n\n");
 }
 
 function shortenTitle(raw, max = 28) {
@@ -822,6 +995,20 @@ function preprocessEdgeListFrames(md) {
     if (isListItemLine(lines[i])) {
       const { listLines, end } = collectListBlock(lines, i);
       if (listLines.some(isListItemLine)) {
+        // `<!-- plain-list -->` 直下のリストは囲み枠にせず素の箇条書きのまま残す
+        let plainProbe = out.length - 1;
+        while (plainProbe >= 0 && !String(out[plainProbe]).trim()) plainProbe--;
+        if (
+          plainProbe >= 0 &&
+          /^<!--\s*plain-list\s*-->$/.test(String(out[plainProbe]).trim())
+        ) {
+          out.splice(plainProbe, out.length - plainProbe);
+          while (out.length && !String(out[out.length - 1]).trim()) out.pop();
+          out.push(...listLines, "");
+          i = end;
+          continue;
+        }
+
         const { title, removeOutIndex } = resolveListFrameTitle(out, listLines);
         if (removeOutIndex >= 0) {
           // タイトル行とその直後〜リスト直前の余剰空行のみ除去（画像は残す）
@@ -893,10 +1080,114 @@ function parseMetaBody(text) {
   return { meta, body: body.trim() };
 }
 
+/**
+ * `==蛍光マーカー==` → Portable Text の highlight デコレータ。
+ * 内部の **太字** や [リンク](url) も別 chunk として解釈する。
+ */
+function parseHighlightInner(inner) {
+  let blocks = markdownToPortableText(String(inner || "").trim(), markdownOptions);
+  blocks = fixLiteralBoldInBlocks(blocks);
+  const children = [];
+  const markDefs = [];
+  for (const block of blocks) {
+    if (block?._type !== "block" || (block.style && block.style !== "normal")) {
+      continue;
+    }
+    for (const child of block.children || []) {
+      if (child?._type !== "span") continue;
+      children.push({
+        ...child,
+        _key: key(),
+        marks: [...(child.marks || []), "highlight"],
+      });
+    }
+    for (const def of block.markDefs || []) {
+      if (!markDefs.some((d) => d._key === def._key)) markDefs.push(def);
+    }
+  }
+  return { children, markDefs };
+}
+
+function applyHighlightPlaceholders(blocks, highlightSegments) {
+  if (!highlightSegments.length) return blocks;
+
+  function fixBlock(block) {
+    if (!block || typeof block !== "object") return block;
+    if (Array.isArray(block)) return block.map(fixBlock);
+
+    if (block._type === "block" && Array.isArray(block.children)) {
+      const joined = block.children
+        .filter((c) => c?._type === "span")
+        .map((c) => c.text || "")
+        .join("");
+      if (!/⟦hl:\d+⟧/.test(joined)) return block;
+
+      const re = /⟦hl:(\d+)⟧/g;
+      const newChildren = [];
+      const newMarkDefs = [...(block.markDefs || [])];
+      let last = 0;
+      let m;
+      while ((m = re.exec(joined)) !== null) {
+        if (m.index > last) {
+          newChildren.push({
+            _type: "span",
+            _key: key(),
+            text: joined.slice(last, m.index),
+            marks: [],
+          });
+        }
+        const inner = highlightSegments[Number(m[1])];
+        if (inner) {
+          const parsed = parseHighlightInner(inner);
+          newChildren.push(...parsed.children);
+          for (const def of parsed.markDefs) {
+            if (!newMarkDefs.some((d) => d._key === def._key)) {
+              newMarkDefs.push(def);
+            }
+          }
+        }
+        last = m.index + m[0].length;
+      }
+      if (last < joined.length) {
+        newChildren.push({
+          _type: "span",
+          _key: key(),
+          text: joined.slice(last),
+          marks: [],
+        });
+      }
+      return { ...block, children: newChildren, markDefs: newMarkDefs };
+    }
+
+    const next = { ...block };
+    for (const [k, v] of Object.entries(next)) {
+      if (k === "_type" || k === "_key") continue;
+      if (Array.isArray(v) || (v && typeof v === "object")) {
+        next[k] = fixBlock(v);
+      }
+    }
+    return next;
+  }
+
+  return fixBlock(blocks);
+}
+
 function convertMdChunk(text) {
   const chunk = (text || "").trim();
   if (!chunk) return [];
-  return markdownToPortableText(chunk, markdownOptions);
+
+  const highlightSegments = [];
+  const processed = chunk.replace(/==([\s\S]+?)==/g, (_, inner) => {
+    const idx = highlightSegments.length;
+    highlightSegments.push(inner.trim());
+    return `⟦hl:${idx}⟧`;
+  });
+
+  let blocks = markdownToPortableText(processed, markdownOptions);
+  if (highlightSegments.length) {
+    blocks = applyHighlightPlaceholders(blocks, highlightSegments);
+  }
+  return blocks;
 }
 
 function titledFrameBodyFromMd(md) {
@@ -1049,6 +1340,26 @@ function fenceToBlocks(kind, inner) {
     ];
   }
 
+  if (k === "service-promo" || k === "servicepromo") {
+    const { meta, body } = parseMetaBody(inner);
+    const title = (meta.title || "おすすめポイント").trim();
+    const detailUrl = (meta.detailUrl || meta.detailurl || "").trim();
+    const officialUrl = (meta.officialUrl || meta.officialurl || "").trim();
+    if (!detailUrl || !officialUrl) return convertMdChunk(inner);
+    return [
+      {
+        _type: "servicePromoCard",
+        _key: key(),
+        title,
+        iconSrc: (meta.icon || "").trim(),
+        iconAlt: (meta.iconAlt || meta.iconalt || title).trim(),
+        detailUrl,
+        officialUrl,
+        points: titledFrameBodyFromMd(body),
+      },
+    ];
+  }
+
   if (k === "cta" || k === "button" || k === "custom-button") {
     const { meta, body } = parseMetaBody(inner);
     const text = (meta.text || body || "詳しくはこちら").trim();
@@ -1082,7 +1393,80 @@ function fenceToBlocks(kind, inner) {
     ];
   }
 
+  if (k === "accordion" || k === "accordion-block") {
+    const { meta, body } = parseMetaBody(inner);
+    const title = (meta.title || "").trim() || "アコーディオン";
+    // ネストした :::speech / :::titled-box も再帰的に変換
+    const nested = [];
+    for (const seg of splitFences(body)) {
+      if (seg.type === "md") nested.push(...convertMdChunk(seg.content));
+      else nested.push(...fenceToBlocks(seg.kind, seg.inner));
+    }
+    return [
+      {
+        _type: "accordionBlock",
+        _key: key(),
+        title,
+        body: nested,
+      },
+    ];
+  }
+
   return convertMdChunk(inner);
+}
+
+/** メリット比較など、指定 H3 をアコーディオンへ（閉じた状態が初期） */
+const DEFAULT_ACCORDION_H3_TITLES = new Set([
+  "緊急通報型",
+  "センサー型",
+  "カメラ型",
+  "自宅訪問型",
+  "電話・アプリ型",
+  "安否確認型",
+  "緊急通報型：２社",
+  "センサー型：4社",
+  "カメラ型：3社",
+  "自宅訪問型：3社",
+  "電話・アプリ型：2社",
+  "安否確認型：４社",
+  "① 親の希望を理解する",
+  "②緊急時のサポートを確認する",
+  "③健康状態に合ったものを選ぶ",
+  "④プライバシーを十分に考慮する",
+  "⑤使いやすさをチェックする",
+  "⑥無理のない予算で選ぶ",
+]);
+
+function extractNamedH3Accordions(blocks, titles = DEFAULT_ACCORDION_H3_TITLES) {
+  if (!blocks?.length) return [];
+  const out = [];
+  let i = 0;
+  while (i < blocks.length) {
+    const block = blocks[i];
+    if (isHeading(block, "h3")) {
+      const title = blockPlainText(block);
+      if (titles.has(title)) {
+        const body = [];
+        i += 1;
+        while (i < blocks.length) {
+          const next = blocks[i];
+          if (isHeading(next, "h2") || isHeading(next, "h3")) break;
+          body.push(next);
+          i += 1;
+        }
+        out.push({
+          _type: "accordionBlock",
+          _key: block._key || key(),
+          title,
+          body,
+        });
+        continue;
+      }
+    }
+    out.push(block);
+    i += 1;
+  }
+  return out;
 }
 
 function blockPlainText(block) {
@@ -1098,7 +1482,12 @@ function isHeading(block, style) {
 function isFaqH2(block) {
   if (!isHeading(block, "h2")) return false;
   const t = blockPlainText(block).replace(/\s+/g, "");
-  return t.includes("よくある質問") || t.includes("質問と回答");
+  return (
+    t.includes("よくある質問") ||
+    t.includes("質問と回答") ||
+    t.includes("Q&A") ||
+    t.includes("Q＆A")
+  );
 }
 
 function normalizeAnswerBlocks(blocks) {
@@ -1471,6 +1860,28 @@ async function attachSpeechIcons(blocks, client, baseDir) {
         }
         delete next.avatarSrc;
       }
+      if (next._type === "servicePromoCard" && next.iconSrc && !next.icon) {
+        const src = String(next.iconSrc);
+        try {
+          const asset = await uploadImageAsset(client, src, baseDir);
+          next.icon = {
+            _type: "image",
+            asset: { _type: "reference", _ref: asset._id },
+            alt: String(next.iconAlt || next.title || ""),
+          };
+        } catch (err) {
+          console.warn(
+            `  servicePromoCard icon upload failed: ${src} (${err?.message || err})`,
+          );
+          next.icon = {
+            _type: "image",
+            src,
+            alt: String(next.iconAlt || next.title || ""),
+          };
+        }
+        delete next.iconSrc;
+        delete next.iconAlt;
+      }
       if (next._type === "relatedArticleCard" && next.imageSrc && !next.image) {
         const src = String(next.imageSrc);
         try {
@@ -1574,6 +1985,7 @@ export async function mdToPortableText(markdown, options = {}) {
   md = preprocessAffiliateCtas(md);
   md = preprocessLinkedImages(md);
   md = preprocessBoldColons(md);
+  md = preprocessServicePromoCards(md);
   md = preprocessEdgeListFrames(md);
 
   const segments = splitFences(md);
@@ -1587,6 +1999,7 @@ export async function mdToPortableText(markdown, options = {}) {
   }
 
   blocks = extractQaBlocks(blocks);
+  blocks = extractNamedH3Accordions(blocks);
   blocks = await normalizeImages(blocks, { client, baseDir });
   blocks = flattenBlockquotes(blocks);
   // 「」等で残った **…** を strong マークへ

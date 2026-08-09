@@ -55,6 +55,7 @@ export default defineType({
                       { title: "太字", value: "strong" },
                       { title: "斜体", value: "em" },
                       { title: "コード", value: "code" },
+                      { title: "黄色マーカー", value: "highlight" },
                     ],
                     annotations: [
                       {

@@ -2,6 +2,9 @@
 
 export const OPERATOR_PROFILE_NAME = "矢野英人｜ヤノヒデ";
 
+/** 吹き出し（右・運営者）のアイコン下に表示する名前 */
+export const OPERATOR_SPEECH_DISPLAY_NAME = "ヤノヒデ";
+
 /** サイドバー・吹き出し・運営者枠共通のアイコン */
 export const OPERATOR_AVATAR = "/avatars/yanohide.jpg";
 
@@ -33,7 +36,9 @@ export function operatorSpeechDisplayName(
   speaker?: string | null,
   position?: "left" | "right",
 ): string {
-  if (isOperatorSpeechSpeaker(speaker, position)) return OPERATOR_PROFILE_NAME;
+  if (isOperatorSpeechSpeaker(speaker, position)) {
+    return OPERATOR_SPEECH_DISPLAY_NAME;
+  }
   const s = String(speaker || "").trim();
   return s || "質問者";
 }

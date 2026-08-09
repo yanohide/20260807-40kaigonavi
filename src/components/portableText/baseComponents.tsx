@@ -7,6 +7,7 @@ import { AppReachCard } from "@/components/blocks/AppReachCard";
 import { CustomButton } from "@/components/blocks/CustomButton";
 import { QaBlock } from "@/components/blocks/QaBlock";
 import { RelatedArticleCard } from "@/components/blocks/RelatedArticleCard";
+import { ServicePromoCard } from "@/components/blocks/ServicePromoCard";
 import { SpeechBubble } from "@/components/blocks/SpeechBubble";
 import { TableBlock } from "@/components/blocks/TableBlock";
 import { TitledFrame } from "@/components/blocks/TitledFrame";
@@ -39,14 +40,14 @@ export const basePortableComponents: PortableTextComponents = {
       return (
         <h3
           id={id || undefined}
-          className="relative mt-8 mb-3 pb-1.5 text-[1.05rem] font-bold tracking-[0.06em] text-[#2c3e6b] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-1/4 after:bg-[#2c3e6b] after:content-['']"
+          className="relative mt-8 mb-3 pb-1.5 text-[1.05rem] font-bold tracking-[0.06em] text-[#333] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-1/4 after:bg-[var(--color-accent)] after:content-['']"
         >
           {children}
         </h3>
       );
     },
     h4: ({ children }) => (
-      <h4 className="relative mt-6 mb-2 pl-3 text-[1rem] font-bold tracking-[0.06em] text-[#2c3e6b] before:absolute before:left-0 before:top-[0.15em] before:bottom-[0.15em] before:w-1 before:rounded-sm before:bg-[#2c3e6b] before:content-['']">
+      <h4 className="relative mt-6 mb-2 pl-3 text-[1rem] font-bold tracking-[0.06em] text-[#333] before:absolute before:left-0 before:top-[0.15em] before:bottom-[0.15em] before:w-1 before:rounded-sm before:bg-[var(--color-accent)] before:content-['']">
         {children}
       </h4>
     ),
@@ -70,6 +71,19 @@ export const basePortableComponents: PortableTextComponents = {
   },
   marks: {
     link: PortableLink,
+    highlight: ({ children }) => (
+      <span
+        className="text-marker-yellow"
+        style={{
+          backgroundImage:
+            "linear-gradient(transparent 64%, #fcf69f 64%, #fcf69f 100%)",
+          WebkitBoxDecorationBreak: "clone",
+          boxDecorationBreak: "clone",
+        }}
+      >
+        {children}
+      </span>
+    ),
   },
   types: {
     image: ({ value }) => {
@@ -114,6 +128,14 @@ export const basePortableComponents: PortableTextComponents = {
       const optimizedSrc =
         urlForImage(value)?.width(requestW).url() ?? sanitySrc;
 
+      // 狭い画像・縦長スクショは実寸。章アイキャッチ等は本文幅100%。
+      const useNaturalSize =
+        (w > 0 && w < 480) ||
+        (w > 0 && h > 0 && w <= 600 && h > w * 1.2);
+      const imgClassName = useNaturalSize
+        ? "figure-img--natural mx-auto block h-auto w-auto max-w-full"
+        : "mx-auto block h-auto w-full max-w-full";
+
       return (
         <figure className="my-8">
           {optimizedSrc ? (
@@ -123,7 +145,12 @@ export const basePortableComponents: PortableTextComponents = {
               width={intrinsicW}
               height={intrinsicH}
               sizes="(max-width: 42rem) 100vw, 42rem"
-              className="mx-auto block h-auto w-auto max-w-full"
+              className={imgClassName}
+              style={
+                useNaturalSize
+                  ? undefined
+                  : { width: "100%", height: "auto" }
+              }
             />
           ) : (
             // eslint-disable-next-line @next/next/no-img-element -- WP/外部 URL（Sanity asset 未登録）
@@ -132,7 +159,12 @@ export const basePortableComponents: PortableTextComponents = {
               alt={alt}
               width={intrinsicW}
               height={intrinsicH}
-              className="mx-auto block h-auto w-auto max-w-full"
+              className={imgClassName}
+              style={
+                useNaturalSize
+                  ? undefined
+                  : { width: "100%", height: "auto" }
+              }
             />
           )}
         </figure>
@@ -155,6 +187,7 @@ export const nestedPortableComponents: PortableTextComponents = {
     customButton: CustomButton,
     accordionBlock: AccordionBlock,
     relatedArticleCard: RelatedArticleCard,
+    servicePromoCard: ServicePromoCard,
   },
 };
 
@@ -170,5 +203,6 @@ export const postPortableComponents: PortableTextComponents = {
     ...nestedPortableComponents.types,
     qaBlock: QaBlock,
     appReachCard: AppReachCard,
+    servicePromoCard: ServicePromoCard,
   },
 };

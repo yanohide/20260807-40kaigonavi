@@ -28,7 +28,7 @@ export type TitledFrameValue = {
   avatarCaption?: string | null;
 };
 
-const NAVY = "#2c3e6b";
+const ACCENT = "var(--color-accent)";
 const AVATAR_SIZE = 168;
 
 function isOperatorProfileFrame(
@@ -177,13 +177,10 @@ export function TitledFrame({ value }: { value?: TitledFrameValue }) {
     return (
       <div
         className="titled-frame relative my-10 border-2 bg-white px-5 py-5 pt-6"
-        style={{ borderColor: NAVY }}
+        style={{ borderColor: ACCENT }}
       >
         {title ? (
-          <span
-            className="absolute left-4 top-0 -translate-y-1/2 bg-white px-2.5 text-sm font-bold tracking-[0.06em]"
-            style={{ color: NAVY }}
-          >
+          <span className="absolute left-4 top-0 -translate-y-1/2 bg-white px-2.5 text-sm font-bold tracking-[0.06em] text-[#333]">
             {title}
           </span>
         ) : null}
@@ -198,13 +195,13 @@ export function TitledFrame({ value }: { value?: TitledFrameValue }) {
         <div className="flex justify-start">
           <span
             className="px-3 py-0.5 text-sm font-bold tracking-[0.06em] text-white"
-            style={{ backgroundColor: NAVY }}
+            style={{ backgroundColor: ACCENT }}
           >
             {title}
           </span>
         </div>
       ) : null}
-      <div className="border-2 bg-white px-5 py-5" style={{ borderColor: NAVY }}>
+      <div className="border-2 bg-white px-5 py-5" style={{ borderColor: ACCENT }}>
         {inner}
       </div>
     </div>

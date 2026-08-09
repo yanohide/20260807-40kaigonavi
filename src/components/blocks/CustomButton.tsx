@@ -35,11 +35,11 @@ const COLOR_MAP: Record<CustomButtonColor, string> = {
   /** クリーム／トープ基調に対する拮抗アクセント（アフィCTA既定） */
   red: "bg-[#e53935] hover:bg-[#c62828]",
   gold: "bg-[#d4a84b] hover:bg-[#c09840]",
-  navy: "bg-[#2c3e6b] hover:bg-[#1f2d4f]",
+  navy: "bg-[var(--color-accent)] hover:bg-[var(--color-accent-deep)]",
   blue: "bg-[#1e88e5] hover:bg-[#1565c0]",
   green: "bg-[#43a047] hover:bg-[#2e7d32]",
   outline:
-    "border-2 border-[#2c3e6b] bg-transparent text-[#2c3e6b] hover:bg-[#eef2f8]",
+    "border-2 border-[var(--color-accent)] bg-transparent text-[var(--color-accent)] hover:bg-[var(--color-surface)]",
 };
 
 const GLOW_SHADOW: Record<CustomButtonColor, string> = {
@@ -47,12 +47,12 @@ const GLOW_SHADOW: Record<CustomButtonColor, string> = {
     "0 0 0 1px rgba(107,45,60,0.3), 0 8px 22px rgba(107,45,60,0.35), 0 0 28px rgba(107,45,60,0.45)",
   red: "0 0 0 1px rgba(229,57,53,0.35), 0 8px 24px rgba(229,57,53,0.4), 0 0 34px rgba(255,80,70,0.55)",
   gold: "0 0 0 1px rgba(212,168,75,0.35), 0 8px 22px rgba(212,168,75,0.4), 0 0 32px rgba(255,210,120,0.5)",
-  navy: "0 0 0 1px rgba(44,62,107,0.3), 0 8px 22px rgba(44,62,107,0.35), 0 0 28px rgba(74,110,180,0.4)",
+  navy: "0 0 0 1px rgba(147,141,129,0.3), 0 8px 22px rgba(147,141,129,0.35), 0 0 28px rgba(147,141,129,0.4)",
   blue: "0 0 0 1px rgba(30,136,229,0.3), 0 8px 22px rgba(30,136,229,0.4), 0 0 30px rgba(30,136,229,0.45)",
   green:
     "0 0 0 1px rgba(67,160,71,0.3), 0 8px 22px rgba(67,160,71,0.35), 0 0 28px rgba(67,160,71,0.45)",
   outline:
-    "0 0 0 1px rgba(44,62,107,0.2), 0 6px 18px rgba(44,62,107,0.28), 0 0 24px rgba(74,110,180,0.25)",
+    "0 0 0 1px rgba(147,141,129,0.2), 0 6px 18px rgba(147,141,129,0.28), 0 0 24px rgba(147,141,129,0.25)",
 };
 
 export function CustomButton({ value }: { value?: CustomButtonValue }) {

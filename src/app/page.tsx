@@ -53,7 +53,7 @@ export default async function HomePage() {
             ) : (
               <div className="post-card-grid post-card-grid--home">
                 {latest.map((post) => (
-                  <PostCard key={post._id} post={post} />
+                  <PostCard key={post._id} post={post} compact />
                 ))}
               </div>
             )}

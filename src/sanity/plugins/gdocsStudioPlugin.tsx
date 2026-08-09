@@ -556,6 +556,7 @@ const MODAL_BLOCK_TYPES = new Set([
   "customButton",
   "accordionBlock",
   "qaBlock",
+  "servicePromoCard",
   // table は GdocsBlock でインライン化し、自前 Dialog のみ使う
 ]);
 

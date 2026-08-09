@@ -79,6 +79,7 @@ export default defineType({
                 "qaBlock",
                 "relatedArticleCard",
                 "appReachCard",
+                "servicePromoCard",
               ],
             },
           ],
@@ -103,6 +104,7 @@ export default defineType({
               { title: "太字", value: "strong" },
               { title: "斜体", value: "em" },
               { title: "コード", value: "code" },
+              { title: "黄色マーカー", value: "highlight" },
             ],
             annotations: [
               {
@@ -174,6 +176,11 @@ export default defineType({
           type: "appReachCard",
           title: "アプリ紹介（アプリーチ）",
           options: { modal: { type: "dialog", width: 1 } },
+        },
+        {
+          type: "servicePromoCard",
+          title: "サービス紹介カード",
+          options: { modal: { type: "dialog", width: 2 } },
         },
       ],
     }),
