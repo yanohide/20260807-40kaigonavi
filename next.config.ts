@@ -1,5 +1,6 @@
 import os from "node:os";
 import type { NextConfig } from "next";
+import { LEGACY_REDIRECTS } from "./src/lib/legacyRedirects";
 
 /** workerd は macOS 13.5+（Darwin 22+）が必要。12.x では dev 起動がクラッシュする */
 function supportsOpenNextDevRuntime(): boolean {
@@ -16,6 +17,9 @@ if (process.env.NODE_ENV === "development" && supportsOpenNextDevRuntime()) {
 }
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return LEGACY_REDIRECTS;
+  },
   turbopack: {
     root: import.meta.dirname,
   },
