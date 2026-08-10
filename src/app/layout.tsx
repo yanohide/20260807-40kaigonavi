@@ -37,6 +37,13 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: "40代からの介護・老後の不安を、わかりやすく具体的に解説するメディア",
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim()
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION.trim(),
+        },
+      }
+    : {}),
 };
 
 /** Next.js 16 + Turbopack 開発時の performance.measure 例外を抑止（Dev overlay 用） */
