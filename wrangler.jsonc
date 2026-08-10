@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "20260807-40kaigonavi",
-  "main": ".open-next/worker.js",
+  "main": "cloudflare/worker-entry.mjs",
   "compatibility_date": "2026-01-13",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {

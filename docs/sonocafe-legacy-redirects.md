@@ -8,6 +8,8 @@ NS 切替後、`sonocafe.xyz` は Cloudflare Worker（Next.js）を向くため�
 `20260807-40kaigonavi.sonozono.workers.dev` へのアクセスは **301 で `sonocafe.xyz` に統一**する。  
 Preview（`*-20260807-40kaigonavi.sonozono.workers.dev`）はリダイレクトしない。
 
+実装: `cloudflare/worker-entry.mjs`（トップ `/` は静的キャッシュで middleware を通らないため Worker 入口で判定）。
+
 ## 記事（5本）
 
 | 旧 URL | 新 URL |
