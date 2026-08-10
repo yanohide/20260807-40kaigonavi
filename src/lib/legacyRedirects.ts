@@ -1,12 +1,11 @@
-import type { Redirect } from "next/dist/lib/load-custom-routes";
-
 /**
  * WordPress sonocafe.xyz → Next.js 移行用 301。
  * NS 切替後は Xserver の .htaccess ではなく、ここで旧 URL を処理する。
  *
+ * OpenNext on Cloudflare では next.config redirects が効かないため middleware でも使用。
  * 正本: docs/sonocafe-legacy-redirects.md
  */
-const LEGACY_PATH_MAP: Record<string, string> = {
+export const LEGACY_PATH_MAP: Record<string, string> = {
   // --- 記事（ルート slug → /posts/slug）---
   "/care-depression": "/posts/care-depression",
   "/dementia-treatment-method": "/posts/dementia-treatment-method",
@@ -45,17 +44,23 @@ const LEGACY_PATH_MAP: Record<string, string> = {
   "/feed": "/",
 };
 
-function expandRedirectVariants(map: Record<string, string>): Redirect[] {
-  const redirects: Redirect[] = [];
-
-  for (const [source, destination] of Object.entries(map)) {
-    redirects.push({ source, destination, permanent: true });
-    if (!source.endsWith("/")) {
-      redirects.push({ source: `${source}/`, destination, permanent: true });
-    }
+export function resolveLegacyRedirect(pathname: string): string | undefined {
+  if (LEGACY_PATH_MAP[pathname]) {
+    return LEGACY_PATH_MAP[pathname];
   }
 
-  return redirects;
-}
+  const withoutTrailingSlash =
+    pathname.length > 1 && pathname.endsWith("/")
+      ? pathname.slice(0, -1)
+      : pathname;
 
-export const LEGACY_REDIRECTS: Redirect[] = expandRedirectVariants(LEGACY_PATH_MAP);
+  if (LEGACY_PATH_MAP[withoutTrailingSlash]) {
+    return LEGACY_PATH_MAP[withoutTrailingSlash];
+  }
+
+  const withTrailingSlash = pathname.endsWith("/")
+    ? pathname
+    : `${pathname}/`;
+
+  return LEGACY_PATH_MAP[withTrailingSlash];
+}

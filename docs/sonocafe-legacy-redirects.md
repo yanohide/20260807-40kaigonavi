@@ -1,7 +1,12 @@
 # sonocafe.xyz 旧 URL → 新 URL（301）
 
 NS 切替後、`sonocafe.xyz` は Cloudflare Worker（Next.js）を向くため、**Xserver の `.htaccess` では旧 URL に来た人を転送できない**。  
-301 は `src/lib/legacyRedirects.ts` → `next.config.ts` の `redirects()` で処理する。
+301 は `src/lib/legacyRedirects.ts` と `src/middleware.ts` で処理する（OpenNext on Cloudflare では middleware が確実）。
+
+## 本番 workers.dev → sonocafe.xyz
+
+`20260807-40kaigonavi.sonozono.workers.dev` へのアクセスは **301 で `sonocafe.xyz` に統一**する。  
+Preview（`*-20260807-40kaigonavi.sonozono.workers.dev`）はリダイレクトしない。
 
 ## 記事（5本）
 
@@ -40,7 +45,7 @@ NS 切替後、`sonocafe.xyz` は Cloudflare Worker（Next.js）を向くため�
 ## 反映方法
 
 ```bash
-git add src/lib/legacyRedirects.ts next.config.ts docs/sonocafe-legacy-redirects.md
+git add src/lib/legacyRedirects.ts src/middleware.ts next.config.ts docs/sonocafe-legacy-redirects.md
 git commit -m "..."
 git push
 # Cloudflare Builds が自動デプロイ、または Dashboard で Retry deployment

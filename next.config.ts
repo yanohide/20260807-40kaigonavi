@@ -1,6 +1,18 @@
 import os from "node:os";
 import type { NextConfig } from "next";
-import { LEGACY_REDIRECTS } from "./src/lib/legacyRedirects";
+import type { Redirect } from "next/dist/lib/load-custom-routes";
+import { LEGACY_PATH_MAP } from "./src/lib/legacyRedirects";
+
+function legacyConfigRedirects(): Redirect[] {
+  const redirects: Redirect[] = [];
+  for (const [source, destination] of Object.entries(LEGACY_PATH_MAP)) {
+    redirects.push({ source, destination, permanent: true });
+    if (!source.endsWith("/")) {
+      redirects.push({ source: `${source}/`, destination, permanent: true });
+    }
+  }
+  return redirects;
+}
 
 /** workerd は macOS 13.5+（Darwin 22+）が必要。12.x では dev 起動がクラッシュする */
 function supportsOpenNextDevRuntime(): boolean {
@@ -18,7 +30,7 @@ if (process.env.NODE_ENV === "development" && supportsOpenNextDevRuntime()) {
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return LEGACY_REDIRECTS;
+    return legacyConfigRedirects();
   },
   turbopack: {
     root: import.meta.dirname,
