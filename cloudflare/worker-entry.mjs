@@ -1,6 +1,9 @@
 /**
  * OpenNext Worker の前段。本番 workers.dev は静的キャッシュより先に 301 する。
  * トップ `/` だけ middleware を通らず HTML が返るため、ここでホスト判定する。
+ *
+ * 旧 WordPress 画像（/wp-content/...）は public/wp-content に取り込み、
+ * OpenNext ASSETS から配信する（Workers から Xserver IP 直 fetch は CF 1003 で不可）。
  */
 import openNextWorker from "../.open-next/worker.js";
 
