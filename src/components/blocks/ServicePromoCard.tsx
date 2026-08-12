@@ -37,20 +37,19 @@ function PromoButton({
 }) {
   const className =
     tone === "red"
-      ? "bg-[#e53935] hover:bg-[#c62828]"
-      : "bg-[#1e88e5] hover:bg-[#1565c0]";
-  const glow =
-    tone === "red"
-      ? "0 0 0 1px rgba(229,57,53,0.35), 0 8px 24px rgba(229,57,53,0.4), 0 0 34px rgba(255,80,70,0.55)"
-      : "0 0 0 1px rgba(30,136,229,0.3), 0 8px 22px rgba(30,136,229,0.4), 0 0 30px rgba(30,136,229,0.45)";
+      ? "border-[#b71c1c] bg-[#e53935] hover:bg-[#c62828]"
+      : "border-[#0d47a1] bg-[#1e88e5] hover:bg-[#1565c0]";
 
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`service-promo-card-btn inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 text-base font-bold tracking-[0.08em] text-white no-underline transition-[box-shadow,transform,background-color] duration-300 hover:-translate-y-0.5 cryptoblog-btn-glow ${className}`}
-      style={{ boxShadow: glow, color: "#ffffff" }}
+      className={`service-promo-card-btn cryptoblog-btn-glow inline-flex w-full items-center justify-center rounded-full border-2 px-6 py-3.5 text-base font-bold tracking-[0.08em] text-white no-underline transition-[transform,background-color,border-color,box-shadow] duration-200 hover:-translate-y-0.5 ${className}`}
+      style={{
+        color: "#ffffff",
+        boxShadow: "0 4px 0 rgba(0, 0, 0, 0.35), 0 8px 16px rgba(0, 0, 0, 0.22)",
+      }}
     >
       <span className="text-white">{label}</span>
       <svg

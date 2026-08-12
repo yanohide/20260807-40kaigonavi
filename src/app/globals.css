@@ -1266,6 +1266,14 @@
   text-decoration: none;
 }
 
+/* サービス紹介ボタン：光シマーは可、影は黒のみ（色付きグロー禁止） */
+.service-promo-card-btn,
+.prose-blog .service-promo-card-btn {
+  box-shadow:
+    0 4px 0 rgba(0, 0, 0, 0.35),
+    0 8px 16px rgba(0, 0, 0, 0.22) !important;
+}
+
 @media (max-width: 639px) {
   .service-promo-card-icon-img,
   .prose-blog .service-promo-card-icon-img {
