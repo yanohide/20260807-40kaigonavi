@@ -71,7 +71,7 @@ export const STATIC_PAGES = {
     title: "お問合せ",
     slug: "contact",
     href: "/contact",
-    note: "mailto: contact@sonocafe.xyz",
+    note: "Google Forms 埋め込み",
   },
   about: { title: "運営者情報", slug: "about", href: "/about" },
 } as const;
