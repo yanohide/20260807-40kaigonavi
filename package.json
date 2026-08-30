@@ -7,6 +7,8 @@
     "dev:webpack": "OPENNEXT_DEV=0 next dev --webpack",
     "dev:cf": "next dev",
     "studio": "sanity dev --port 3333",
+    "wp:preview": "bash scripts/open-wp-preview.sh",
+    "wp:admin": "bash scripts/open-wp-preview.sh https://sonocafe.xyz/wp-login.php",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

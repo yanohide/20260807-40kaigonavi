@@ -242,6 +242,100 @@
   background: var(--color-taupe);
 }
 
+.site-header-toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .site-header-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .site-header-toggle-bar {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background: var(--color-header-text);
+    border-radius: 1px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-header--stuck .site-header-toggle-bar {
+    background: #fff;
+  }
+
+  .site-header--menu-open .site-header-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .site-header--menu-open .site-header-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header--menu-open .site-header-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .site-header--menu-open .site-header-inner {
+    overflow: visible;
+  }
+
+  .site-header .site-nav {
+    display: none;
+  }
+
+  .site-header .site-nav.site-nav--open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    gap: 0;
+    padding: 0.25rem 1.25rem 1rem;
+    background: var(--color-header-bg);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .site-header--stuck .site-nav.site-nav--open {
+    background: color-mix(in srgb, var(--color-footer) 96%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .site-header .site-nav.site-nav--open a {
+    width: 100%;
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .site-header .site-nav.site-nav--open a:last-child {
+    border-bottom: none;
+  }
+
+  .site-header .site-nav.site-nav--open a::after {
+    display: none;
+  }
+}
+
 .site-footer {
   position: relative;
   z-index: 10;
@@ -510,6 +604,21 @@
   height: auto;
   max-width: 1600px;
   margin-inline: auto;
+}
+
+/* スマホ表示：背景の余白を切り、中央のイラスト部分（7カット）のみを見せる */
+@media (max-width: 640px) {
+  .home-hero--wp {
+    overflow: hidden;
+  }
+
+  .home-hero-wp-img {
+    aspect-ratio: 7 / 5;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .home-hero-bg {
