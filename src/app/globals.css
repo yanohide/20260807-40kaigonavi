@@ -19,6 +19,8 @@
   --color-line: #e5e2dc;
   --color-link: #3a6ea5;
   --color-warning: #a65d5d;
+  --color-worry: #c62828;
+  --color-worry-bg: #fffafa;
   --color-memo: #d4a84b;
   --color-navy: #938d81;
   --color-header-bg: #fdfdfd;
@@ -2178,6 +2180,89 @@
 /* 装飾ブロック内のボタンは本文リンク色を引き継がない */
 .prose-blog a[class*="bg-"] {
   text-decoration: none;
+}
+
+/* リード文末の自動目次（本文 h2/h3 から生成） */
+.article-toc {
+  margin: 2.5rem 0;
+  padding: 1.75rem 0 0.25rem;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.article-toc-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 1.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-ink);
+}
+
+.article-toc-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.article-toc-list {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.article-toc-item {
+  line-height: 1.55;
+}
+
+.article-toc-item + .article-toc-item {
+  margin-top: 0.85rem;
+}
+
+.article-toc-item--sub {
+  margin-top: 0.5rem !important;
+  padding-left: 1.5rem;
+}
+
+.article-toc-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.article-toc-link:hover {
+  color: var(--color-taupe-deep);
+}
+
+.article-toc-number {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.article-toc-sep {
+  flex-shrink: 0;
+  color: var(--color-line);
+}
+
+.article-toc-text {
+  min-width: 0;
+}
+
+.article-toc-item--sub .article-toc-link {
+  font-size: 0.92em;
+  color: var(--color-muted);
+}
+
+.article-toc-item--sub .article-toc-number {
+  font-weight: 500;
+  color: var(--color-muted);
 }
 
 /* H2 帯（章見出し）— 紺 */

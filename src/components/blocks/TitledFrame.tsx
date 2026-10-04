@@ -16,7 +16,7 @@ import {
 } from "@/lib/operatorProfile";
 import { urlForImage } from "@/sanity/lib/image";
 
-export type TitledFrameStyle = "band" | "edge";
+export type TitledFrameStyle = "band" | "edge" | "worry";
 
 export type TitledFrameValue = {
   title?: string;
@@ -83,14 +83,19 @@ function FrameAvatar({
 
 function resolveStyle(
   style: TitledFrameValue["style"],
-): "band" | "edge" {
+): TitledFrameStyle {
   if (style === "edge") return "edge";
+  if (style === "worry") return "worry";
   return "band";
 }
 
 function isTocFrame(title?: string) {
   const t = String(title || "").replace(/\s+/g, "");
-  return t.includes("本記事の内容") || t.includes("目次");
+  return (
+    t.includes("この記事の内容") ||
+    t.includes("本記事の内容") ||
+    t.includes("目次")
+  );
 }
 
 /** 「本記事の内容」枠：各箇条書きを見出しアンカーへリンク */
@@ -125,6 +130,7 @@ function tocFrameComponents(): PortableTextComponents {
  * キャプション付き囲み枠。
  * - band: タイトル帯を枠の上辺に接して左寄せ（紺帯・白文字）
  * - edge: タイトルを枠上辺に挟んで左寄せ（白地・紺文字）
+ * - worry: リードの悩みリスト専用（赤い枠線・タイトルなし）
  * avatar があるときは本文左・丸画像右の2カラム。
  */
 export function TitledFrame({ value }: { value?: TitledFrameValue }) {
@@ -172,6 +178,17 @@ export function TitledFrame({ value }: { value?: TitledFrameValue }) {
   ) : (
     bodyEl
   );
+
+  if (style === "worry") {
+    return (
+      <div
+        className="titled-frame titled-frame--worry my-8 border-2 bg-[var(--color-worry-bg)] px-5 py-4"
+        style={{ borderColor: "var(--color-worry)" }}
+      >
+        {inner}
+      </div>
+    );
+  }
 
   if (style === "edge") {
     return (

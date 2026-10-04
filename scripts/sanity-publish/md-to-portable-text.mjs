@@ -1249,8 +1249,11 @@ function fenceToBlocks(kind, inner) {
 
   if (k === "titled-box" || k === "titledbox") {
     const { meta, body } = parseMetaBody(inner);
-    const title = meta.title?.trim() || "枠タイトル";
-    const style = meta.style === "edge" ? "edge" : "band";
+    const style = ["edge", "worry"].includes(meta.style)
+      ? meta.style
+      : "band";
+    const title =
+      style === "worry" ? meta.title?.trim() || "" : meta.title?.trim() || "枠タイトル";
     const avatarRaw = String(meta.avatar || meta.icon || "").trim();
     const avatarCaption = String(
       meta.avatarCaption || meta.caption || meta.name || "",
@@ -1270,7 +1273,7 @@ function fenceToBlocks(kind, inner) {
       {
         _type: "titledFrame",
         _key: key(),
-        title,
+        ...(title ? { title } : {}),
         style,
         body: titledFrameBodyFromMd(body),
         ...(avatarSrc ? { avatarSrc } : {}),

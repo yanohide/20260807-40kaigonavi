@@ -18,7 +18,13 @@ export default defineType({
       name: "title",
       title: "タイトル",
       type: "string",
-      validation: (rule) => rule.required(),
+      description: "悩み枠では空欄のまま使用します。",
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const parent = context.parent as { style?: string } | undefined;
+          if (parent?.style === "worry") return true;
+          return String(value || "").trim() ? true : "タイトルは必須です";
+        }),
     }),
     defineField({
       name: "style",
@@ -28,6 +34,7 @@ export default defineType({
         list: [
           { title: "帯（枠の上に紺帯・白文字）", value: "band" },
           { title: "枠上辺に挟む（左・紺文字）", value: "edge" },
+          { title: "悩みリスト（赤い枠線・タイトルなし）", value: "worry" },
         ],
         layout: "radio",
         direction: "horizontal",
@@ -95,9 +102,13 @@ export default defineType({
     select: { title: "title", style: "style" },
     prepare({ title, style }) {
       const styleLabel =
-        style === "edge" ? "枠上辺に挟む" : "帯スタイル";
+        style === "worry"
+          ? "悩みリスト（赤枠）"
+          : style === "edge"
+            ? "枠上辺に挟む"
+            : "帯スタイル";
       return {
-        title: title || "（タイトルなし）",
+        title: title || (style === "worry" ? "悩みリスト" : "（タイトルなし）"),
         subtitle: `キャプション付きブロック・${styleLabel}`,
       };
     },

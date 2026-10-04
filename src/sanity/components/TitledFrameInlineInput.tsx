@@ -13,7 +13,7 @@ type TitledFrameValue = {
   _type?: string;
   _key?: string;
   title?: string;
-  style?: "band" | "edge" | string;
+  style?: "band" | "edge" | "worry" | string;
   body?: unknown;
 };
 
@@ -24,13 +24,16 @@ type TitledFrameValue = {
  */
 export function TitledFrameInlineInput(props: ObjectInputProps) {
   const value = (props.value as TitledFrameValue | undefined) ?? {};
-  const style = value.style === "edge" ? "edge" : "band";
+  const style =
+    value.style === "edge" || value.style === "worry"
+      ? value.style
+      : "band";
 
   const writeTitle = (title: string) => {
     props.onChange(set(title, ["title"]));
   };
 
-  const writeStyle = (next: "band" | "edge") => {
+  const writeStyle = (next: "band" | "edge" | "worry") => {
     props.onChange(set(next, ["style"]));
   };
 
@@ -44,16 +47,18 @@ export function TitledFrameInlineInput(props: ObjectInputProps) {
         タイトルと本文をこの画面で入力します。本文の確定はフォーカスを外したときです。
       </Text>
 
-      <Stack space={2}>
-        <Text size={1} weight="medium">
-          タイトル
-        </Text>
-        <BlurTextInput
-          value={value.title ?? ""}
-          placeholder="枠のキャプション"
-          onCommit={writeTitle}
-        />
-      </Stack>
+      {style !== "worry" ? (
+        <Stack space={2}>
+          <Text size={1} weight="medium">
+            タイトル
+          </Text>
+          <BlurTextInput
+            value={value.title ?? ""}
+            placeholder="枠のキャプション"
+            onCommit={writeTitle}
+          />
+        </Stack>
+      ) : null}
 
       <Stack space={2}>
         <Text size={1} weight="medium">
@@ -69,6 +74,11 @@ export function TitledFrameInlineInput(props: ObjectInputProps) {
             active={style === "edge"}
             label="枠上辺に挟む（紺文字）"
             onClick={() => writeStyle("edge")}
+          />
+          <StyleChip
+            active={style === "worry"}
+            label="悩みリスト（赤枠）"
+            onClick={() => writeStyle("worry")}
           />
         </Flex>
       </Stack>
