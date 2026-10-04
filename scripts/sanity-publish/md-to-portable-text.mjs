@@ -1363,6 +1363,30 @@ function fenceToBlocks(kind, inner) {
     ];
   }
 
+  if (k === "sources" || k === "source-list" || k === "sourcelist") {
+    const sources = [];
+    for (const rawLine of inner.split("\n")) {
+      const line = rawLine.trim();
+      if (!line) continue;
+      const m = /^-+\s*(.+)$/.exec(line);
+      if (!m) continue;
+      const rest = m[1];
+      const sepIdx = rest.indexOf("|");
+      const title = (sepIdx >= 0 ? rest.slice(0, sepIdx) : rest).trim();
+      const url = sepIdx >= 0 ? rest.slice(sepIdx + 1).trim() : "";
+      if (!title) continue;
+      sources.push({ _key: key(), title, ...(url ? { url } : {}) });
+    }
+    if (!sources.length) return convertMdChunk(inner);
+    return [
+      {
+        _type: "sourceList",
+        _key: key(),
+        sources,
+      },
+    ];
+  }
+
   if (k === "cta" || k === "button" || k === "custom-button") {
     const { meta, body } = parseMetaBody(inner);
     const text = (meta.text || body || "詳しくはこちら").trim();

@@ -382,11 +382,9 @@ tone: sky
 
 ### 出典一覧
 
--   介護保険サービスと保険外サービスを組み合わせて提供する場合の取扱いについて（厚生労働省）  
-    [https://www.mhlw.go.jp/web](https://www.mhlw.go.jp/web)
--   保険外サービス活用ガイドブック (厚生労働省・農林水産省・経済産業省)  
-    [https://www.mhlw.go.jp/content/12300000/001236607.pdf](https://www.mhlw.go.jp/content/12300000/001236607.pdf)
--   ヘルスケアサービスガイドライン等のあり方について(経済産業省)  
-    [https://www.meti.go.jp/policy/mono\_info\_service/healthcare/arikatagaiyou.pdf](https://www.meti.go.jp/policy/mono_info_service/healthcare/arikatagaiyou.pdf)
--   一般社団法人介護関連サービス事業協会[  
-    https://csba.work](https://csba.work)
+:::sources
+- 介護保険サービスと保険外サービスを組み合わせて提供する場合の取扱いについて（厚生労働省） | https://www.mhlw.go.jp/web
+- 保険外サービス活用ガイドブック (厚生労働省・農林水産省・経済産業省) | https://www.mhlw.go.jp/content/12300000/001236607.pdf
+- ヘルスケアサービスガイドライン等のあり方について(経済産業省) | https://www.meti.go.jp/policy/mono_info_service/healthcare/arikatagaiyou.pdf
+- 一般社団法人介護関連サービス事業協会 | https://csba.work
+:::

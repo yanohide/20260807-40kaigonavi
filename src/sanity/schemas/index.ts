@@ -4,6 +4,7 @@ import customButton from "./blocks/customButton";
 import qaBlock from "./blocks/qaBlock";
 import relatedArticleCard from "./blocks/relatedArticleCard";
 import servicePromoCard from "./blocks/servicePromoCard";
+import sourceList from "./blocks/sourceList";
 import speechBubble from "./blocks/speechBubble";
 import titledFrame from "./blocks/titledFrame";
 import articleSet from "./articleSet";
@@ -20,6 +21,7 @@ const schemas = [
   relatedArticleCard,
   appReachCard,
   servicePromoCard,
+  sourceList,
 ];
 
 export default schemas;

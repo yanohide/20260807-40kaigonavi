@@ -8,6 +8,7 @@ import { CustomButton } from "@/components/blocks/CustomButton";
 import { QaBlock } from "@/components/blocks/QaBlock";
 import { RelatedArticleCard } from "@/components/blocks/RelatedArticleCard";
 import { ServicePromoCard } from "@/components/blocks/ServicePromoCard";
+import { SourceList } from "@/components/blocks/SourceList";
 import { SpeechBubble } from "@/components/blocks/SpeechBubble";
 import { TableBlock } from "@/components/blocks/TableBlock";
 import { TitledFrame } from "@/components/blocks/TitledFrame";
@@ -204,5 +205,6 @@ export const postPortableComponents: PortableTextComponents = {
     qaBlock: QaBlock,
     appReachCard: AppReachCard,
     servicePromoCard: ServicePromoCard,
+    sourceList: SourceList,
   },
 };
