@@ -53,17 +53,20 @@ export function extractToc(body: PortableTextBlock[] | null | undefined): {
   return { items, firstHeadingIndex };
 }
 
-/** リード文末に置く目次カード。本文の h2/h3 から自動生成する。 */
+/** リード文末に置く目次カード。本文の h2/h3 から自動生成する。クリックで開閉できる。 */
 export function TableOfContents({ items }: { items: TocItem[] }) {
   if (!items || items.length === 0) return null;
   return (
-    <nav className="article-toc not-prose" aria-label="目次">
-      <p className="article-toc-heading">
+    <details open className="article-toc not-prose group/toc" aria-label="目次">
+      <summary className="article-toc-heading">
         <span aria-hidden className="article-toc-icon">
           ☰
         </span>
         目次
-      </p>
+        <span aria-hidden className="article-toc-caret">
+          ▼
+        </span>
+      </summary>
       <ol className="article-toc-list">
         {items.map((item) => (
           <li
@@ -84,6 +87,6 @@ export function TableOfContents({ items }: { items: TocItem[] }) {
           </li>
         ))}
       </ol>
-    </nav>
+    </details>
   );
 }
