@@ -16,8 +16,10 @@ export function urlForImage(source?: SanityImageSource | null) {
     typeof source === "object" &&
     source !== null &&
     "src" in source &&
-    !("asset" in source)
+    !(source as { asset?: unknown }).asset
   ) {
+    // GROQ の asset->{...} 展開により asset: null が付与されることがあるため、
+    // キーの有無ではなく値の真偽で判定する。
     return null;
   }
   try {
@@ -25,4 +27,14 @@ export function urlForImage(source?: SanityImageSource | null) {
   } catch {
     return null;
   }
+}
+
+/**
+ * `{ src: "/images/..." }`（public 配下のローカルパス、asset 無し）を
+ * そのまま返す。Sanity アセットではない画像（移行済みの記事画像等）用。
+ */
+export function localSrcOf(source?: SanityImageSource | null): string | null {
+  if (!source || typeof source !== "object") return null;
+  const src = (source as { src?: unknown }).src;
+  return typeof src === "string" && src.startsWith("/") ? src : null;
 }

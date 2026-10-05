@@ -3,7 +3,7 @@ title: "介護保険外サービスとは？種類と費用相場｜事業所選
 slug: non-insurance-nursing-care-services-types-and-cost
 publishedAt: "2025-12-12"
 excerpt: "介護保険の対象外として提供される介護保険外サービスの概要、具体例と費用相場、保険サービスとの組み合わせ、事業所選びのポイントを解説。"
-heroImage: https://sonocafe.xyz/wp-content/uploads/2025/12/1.jpg
+heroImage: /images/articles/non-insurance-nursing-care-services-types-and-cost/01-1.jpg
 heroImageAlt: "介護保険外サービスのイメージ"
 categories:
   - 介護の悩み
@@ -52,7 +52,7 @@ tone: sky
 
 ## 介護保険外サービスとは？
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/12/2-1024x576.jpg)
+![](/images/articles/non-insurance-nursing-care-services-types-and-cost/02-2-1024x576.jpg)
 
 介護保険外サービスとは、介護保険給付の対象外で事業者が独自に提供するサービスです。
 
@@ -79,7 +79,7 @@ tone: sky
 
 ## 介護保険外サービス7つの具体例と費用相場を解説
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/12/5-1024x576.jpg)
+![](/images/articles/non-insurance-nursing-care-services-types-and-cost/03-5-1024x576.jpg)
 
 介護保険外サービスには、さまざまな種類があり、費用相場も異なります。
 
@@ -185,7 +185,7 @@ tone: sky
 
 ## 【体験談】介護保険外サービスに利用登録するだけでも安心
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/12/3-1024x576.jpg)
+![](/images/articles/non-insurance-nursing-care-services-types-and-cost/04-3-1024x576.jpg)
 
 介護保険外サービスは、介護保険では対応できない生活課題を解決できます。
 
@@ -217,7 +217,7 @@ tone: sky
 
 ## 介護保険外サービスを賢く使う3つのポイント
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/12/6-1024x576.jpg)
+![](/images/articles/non-insurance-nursing-care-services-types-and-cost/05-6-1024x576.jpg)
 
 介護保険外サービスを効果的に活用するポイントは、以下の3つです。
 
@@ -272,7 +272,7 @@ tone: sky
 
 ## 失敗しない事業所の選び方 | 3つのポイント+a
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/12/7-1024x576.jpg)
+![](/images/articles/non-insurance-nursing-care-services-types-and-cost/06-7-1024x576.jpg)
 
 介護保険外サービスを安心して利用するには、信頼できる事業者選びが重要です。
 
@@ -330,7 +330,7 @@ tone: sky
 
 #### +a: 事業所選びの最新参考情報
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/12/スクリーンショット-2025-11-29-9.09.44-1024x578.png)
+![](/images/articles/non-insurance-nursing-care-services-types-and-cost/07-_________-2025-11-29-9.09.44-1024x578.png)
 
 画像：ヘルスケアガイドライン等の在り方について（経済産業省）
 
@@ -350,7 +350,7 @@ tone: sky
 
 ## まとめ
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/12/8-1024x576.jpg)
+![](/images/articles/non-insurance-nursing-care-services-types-and-cost/08-8-1024x576.jpg)
 
 介護保険外サービスは、介護保険だけでは対応できない多様なニーズに応える柔軟なサービスです。
 

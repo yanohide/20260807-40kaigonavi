@@ -3,7 +3,7 @@ title: "【セルフチェック】介護うつとは？効果的な治療法か
 slug: care-depression
 publishedAt: "2025-06-15"
 excerpt: "介護うつのセルフチェックから専門医相談、家族への協力依頼、サービス活用まで具体的な改善方法を解説。"
-heroImage: https://sonocafe.xyz/wp-content/uploads/2025/06/1.jpg
+heroImage: /images/articles/care-depression/01-1.jpg
 heroImageAlt: "介護うつ_アイキャッチ画像"
 categories:
   - 介護の悩み
@@ -54,7 +54,7 @@ tone: sky
 
 ## 【チェックリスト】あなたは「介護うつ」かも？
 
-![介護うつ\_チェックリスト](https://sonocafe.xyz/wp-content/uploads/2025/06/2-1024x576.jpg)
+![介護うつ\_チェックリスト](/images/articles/care-depression/02-2-1024x576.jpg)
 
 毎日の介護で心身ともに疲れている中**「最近調子が悪いな」**と感じることはありませんか？
 
@@ -167,7 +167,7 @@ style: edge
 
 ## 「介護うつ」だと感じたら専門医に相談するのが大切
 
-![介護うつ\_治療法](https://sonocafe.xyz/wp-content/uploads/2025/06/3-1024x576.jpg)
+![介護うつ\_治療法](/images/articles/care-depression/03-3-1024x576.jpg)
 
 「介護うつ」は**正しいアプローチで改善が期待**できます。ひとりで悩まずに適切なサポートを受けましょう。
 
@@ -269,7 +269,7 @@ style: edge
 
 ## 家族に上手く助けを求める3つのコツ
 
-![介護うつ\_家族に助け](https://sonocafe.xyz/wp-content/uploads/2025/06/4-1024x576.jpg)
+![介護うつ\_家族に助け](/images/articles/care-depression/04-4-1024x576.jpg)
 
 介護を1人で抱え込まず、「介護うつ」の予防と回復に**家族の協力**は欠かせません。
 
@@ -326,7 +326,7 @@ style: edge
 
 ## 心と時間の余裕を作る便利な介護サービス3選
 
-![介護うつ\_介護サービス](https://sonocafe.xyz/wp-content/uploads/2025/06/5-1024x576.jpg)
+![介護うつ\_介護サービス](/images/articles/care-depression/05-5-1024x576.jpg)
 
 **心と時間の余裕を作る便利な介護サービス3選**
 
@@ -399,7 +399,7 @@ style: edge
 
 ## 心と体の元気を取り戻す３つのセルフケア
 
-![介護うつ\_セルフケア](https://sonocafe.xyz/wp-content/uploads/2025/06/6-1024x576.jpg)
+![介護うつ\_セルフケア](/images/articles/care-depression/06-6-1024x576.jpg)
 
 **「介護うつ」**の予防と改善には、専門的な治療と並行して日常生活でできる**セルフケアも重要な役割**を果たします。［6］
 
@@ -505,7 +505,7 @@ style: edge
 
 ## 仕事と介護を無理なく両立させる3つの方法
 
-![介護うつ\_仕事と両立](https://sonocafe.xyz/wp-content/uploads/2025/06/7-1024x576.jpg)
+![介護うつ\_仕事と両立](/images/articles/care-depression/07-7-1024x576.jpg)
 
 **仕事と介護を無理なく両立させる3つの方法**
 
@@ -599,7 +599,7 @@ style: edge
 
 ## まとめ：「介護うつ」から抜け出し、心の余裕を取り戻そう
 
-![介護うつ\_まとめ](https://sonocafe.xyz/wp-content/uploads/2025/06/8-1024x576.jpg)
+![介護うつ\_まとめ](/images/articles/care-depression/08-8-1024x576.jpg)
 
 結論として、**「介護うつ」**は適切な対策により予防・改善が見込めます。
 

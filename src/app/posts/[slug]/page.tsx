@@ -6,7 +6,7 @@ import Link from "next/link";
 import { PostBody } from "@/components/PostBody";
 import { formatDateJa } from "@/lib/formatDate";
 import { sanityFetch } from "@/sanity/lib/client";
-import { urlForImage } from "@/sanity/lib/image";
+import { localSrcOf, urlForImage } from "@/sanity/lib/image";
 import { POST_QUERY, POST_SLUGS_QUERY } from "@/sanity/lib/queries";
 
 type Post = {
@@ -88,6 +88,7 @@ export default async function PostPage({
   }
 
   const heroUrl =
+    localSrcOf(post.heroImage) ??
     urlForImage(post.heroImage)?.width(1200).height(675).fit("crop").url() ??
     null;
 

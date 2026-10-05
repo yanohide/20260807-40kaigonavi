@@ -75,7 +75,16 @@ console.log(`Body:    ${body.length} blocks`);
 
 let heroImage;
 const heroSrc = data.heroImage ? String(data.heroImage).trim() : "";
-if (heroSrc) {
+if (heroSrc.startsWith("/")) {
+  // /images/... （public 配下のローカルパス）は Sanity へアップロードせず
+  // そのまま src として保持する（レンダラー側でローカル配信する）。
+  heroImage = {
+    _type: "image",
+    src: heroSrc,
+    alt: data.heroImageAlt ? String(data.heroImageAlt) : "",
+  };
+  console.log(`Hero:    local ${heroSrc}`);
+} else if (heroSrc) {
   try {
     const asset = await uploadImageAsset(client, heroSrc, baseDir);
     heroImage = {

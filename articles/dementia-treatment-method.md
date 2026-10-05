@@ -3,7 +3,7 @@ title: "認知症は治療できる？完治困難でも進行を遅らせる3�
 slug: dementia-treatment-method
 publishedAt: "2025-12-12"
 excerpt: "認知症治療の現状と進行抑制の方法、相談先を整理し、家族が取れる行動を具体的に紹介。"
-heroImage: https://sonocafe.xyz/wp-content/uploads/2025/10/1-1.jpg
+heroImage: /images/articles/dementia-treatment-method/01-1-1.jpg
 heroImageAlt: "認知症治療のイメージ"
 categories:
   - 介護の悩み
@@ -46,7 +46,7 @@ tone: sky
 
 ## 認知症は治療できる？知っておくべき3つの基本
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/10/2-1-1024x576.jpg)
+![](/images/articles/dementia-treatment-method/02-2-1-1024x576.jpg)
 
 認知症治療の基本は以下の3点です。
 
@@ -101,7 +101,7 @@ tone: sky
 
 ## 認知症の進行を遅らせる3つの治療法
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/10/3-1024x576.jpg)
+![](/images/articles/dementia-treatment-method/03-3-1024x576.jpg)
 
 **認知症の進行を遅らせる3つの治療法**
 
@@ -170,7 +170,7 @@ tone: sky
 
 ## 認知症治療は何から始めればいいの？【3ステップ】
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/10/4-1024x576.jpg)
+![](/images/articles/dementia-treatment-method/04-4-1024x576.jpg)
 
 **認知症治療の3ステップ**
 
@@ -230,7 +230,7 @@ tone: sky
 
 ## 認知症かもしれない…何科を受診すればいいの？
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/10/5-1024x576.jpg)
+![](/images/articles/dementia-treatment-method/05-5-1024x576.jpg)
 
 認知症が疑われる場合の相談先は以下のとおりです。
 
@@ -250,7 +250,7 @@ tone: sky
 
 ## 【最初が肝心】認知症治療に悩んだら医師に相談しよう！
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/10/6-1024x576.jpg)
+![](/images/articles/dementia-treatment-method/06-6-1024x576.jpg)
 
 認知症を完全に治すのは困難ですが、効果的な治療を選択すれば症状の進行を遅らせることは可能です。
 

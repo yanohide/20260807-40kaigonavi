@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { urlForImage } from "@/sanity/lib/image";
+import { localSrcOf, urlForImage } from "@/sanity/lib/image";
 
 export type SidebarPostItem = {
   _id: string;
@@ -8,6 +8,7 @@ export type SidebarPostItem = {
   slug: { current: string };
   heroImage?: {
     asset?: { _ref?: string };
+    src?: string;
     alt?: string;
   } | null;
 };
@@ -26,7 +27,8 @@ export function SidebarPostPanel({ title, posts }: SidebarPostPanelProps) {
       <ul className="sidebar-post-list">
         {posts.map((post) => {
           const imageUrl = post.heroImage
-            ? urlForImage(post.heroImage)?.width(320).height(180).url()
+            ? (localSrcOf(post.heroImage) ??
+              urlForImage(post.heroImage)?.width(320).height(180).url())
             : null;
 
           return (

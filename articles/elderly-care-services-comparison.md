@@ -3,7 +3,7 @@ title: "【迷ったらコレ】高齢者見守りサービス18社を比較【2
 slug: elderly-care-services-comparison
 publishedAt: "2025-03-08"
 excerpt: "見守りサービス18社を種類別に比較。費用・特徴・選び方のポイントを表形式で整理。"
-heroImage: public/images/hero-elderly-care-services-comparison.jpg
+heroImage: /images/hero-elderly-care-services-comparison.jpg
 heroImageAlt: "高齢者見守りサービス比較"
 categories:
   - 高齢者見守り
@@ -46,24 +46,24 @@ tone: sky
 
 | サービス名 |  | サービスの種類 | 初期費用 | 月額の費用 | サービスの特徴 |
 | --- | --- | --- | --- | --- | --- |
-| [**ALSOK**](https://www.alsok.co.jp/)<br>[**みまもりサポート**](https://www.alsok.co.jp/)<br>（レンタル） | ![アルソック_画像](https://sonocafe.xyz/wp-content/uploads/2025/03/1-3.png) | 緊急通報型 | 13,365円（税込） | 2,838円（税込） | 緊急通報と健康相談が可能 |
-| [**セコム**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>[**親の見守りプラン**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>(レンタル) | ![セコム_画像](https://sonocafe.xyz/wp-content/uploads/2025/03/2-2.png) | 緊急通報型 | 工事料48,400円（税込）+20,000円（保証金） | 5,060円（税込） | ペンダント型救急通報機能付き |
-| [**BOCCO emo**](https://www.bocco.me/rental/)<br>[**高齢者見守りロボ**](https://www.bocco.me/rental/)<br>（レンタル） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/3-1.png) | センサー型 | 0円 | 2,970円（税込）初月無料 | Wi-Fi不要の見守りロボット |
-| [**かんたん見守りプラグ（コンセント型センサー）**](https://homeiot.kddi.com/pr/auhome/cmp_affiliate_plug/index.html?fpc=30.15.7.c9e81d0079b6bc4h.1742918508000) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/4-1.png) | センサー型 | 8,800円（税込）初月無料 | 539円（税込） | コンセントに挿すだけ見守り |
-| [**ひとり暮らしのおまもり**](https://hitori-omamori.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/5-1.png) | センサー型 | 9,240円（税込） | 0円 | 無料で使えるセンサー型 |
-| [**アイシル**](https://aitosys.com/aishiru/medicine.html)<br>[**高齢者見守りシステム**](https://aitosys.com/aishiru/medicine.html)<br>（レンタル） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/6-1.png) | センサー型 | 21,780円（税込） | 5,060円（税込） | 認知機能低下の早期発見 |
-| [**MANOMA**](https://manoma.jp/entry/parent_care/)<br>[**親の見守りセット**](https://manoma.jp/entry/parent_care/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/7.png) | カメラ型 | 2,750円（税込） | 3,278円（税込） | ライブ映像と録画で様子が分かる |
-| [**みまもりCUBE**](https://ramrock-eyes.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/8.png) | カメラ型 | 0円 | 5,390円（税込）〜 | 介護保険適応あり｜複数プラン |
-| [**ALSOK**](https://www.alsok.co.jp/person/alboeye/)<br>[**「アルボeye」**](https://www.alsok.co.jp/person/alboeye/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/9.png) | カメラ型 | 0円 | 2,750円（税込） | オプションで緊急通報が可能 |
-| [**クロネコ見守りサービス**](https://nekosapo-order2.kuronekoyamato.co.jp/mimamori.html) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/10.png) | 自宅訪問型 | 0円 | 1,738円（税込） | 電球型センサー+訪問 |
-| [**宅配クック123**](https://takuhaicook123.jp/)<br>[**（弁当宅配）**](https://takuhaicook123.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/11.png) | 自宅訪問型 | 0円 | １食500〜1,000円程度(メニューによる) | 送料無料｜65歳以上は初回1食無料 |
-| [**郵便局のみまもりサービス**](https://www.post.japanpost.jp/life/mimamori/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/12.png) | 自宅訪問型 | 0円 | 2,500円（税込） | 月1回、郵便局員が自宅訪問 |
-| [**みまもりコール**](https://mimamori-call.com/price/)<br>（電話） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/13.png) | 電話・アプリ型 | 11,000円（税込） | 3,300円（税込）〜 | 週1コース・週2コース・毎日コース |
-| [**見まもっTELプラス**](https://www.homenet-24.co.jp/service/mimamori/tel_plus/)<br>（電話） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/14.png) | 電話・アプリ型 | 11,000円（税込） | 1,650円（税込） | 工事不要｜電話回線のみで利用可能 |
-| [みまもり電池](https://mimamori.novars.jp/)<br>[「MaBeee」](https://mimamori.novars.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/15.png) | 安否確認型【家電】 | 3,278円（税込） | 1,078円（税込） | TVリモコンなど単三電池の利用をアプリ通知 |
-| [象印のポット](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/)<br>[「みまもりほっとラインiポット」](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/16.png) | 安否確認型【家電】 | 5,500円（税込） | 3,300円（税込）初月無料 | ポットの使用状況をメールで通知 |
-| [**まもりこ**](https://www.necolico.co.jp/mamolico/#mamolico_buy)<br>[**冷蔵庫設置センサー**](https://www.necolico.co.jp/mamolico/#mamolico_buy) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/17.png) | 安否確認型【家電】 | 端末台：13,200円（税込） | 550円（税込） | Wi-Fi不要｜コンセントにつなぐだけ |
-| [TVの接続センサー](https://mirumoni.com/)<br>[「MIRUMONI」](https://mirumoni.com/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/18.png) | 安否確認型【家電】 | 0円 | 2,860円（税込） | HDMIケーブルでテレビに接続 |
+| [**ALSOK**](https://www.alsok.co.jp/)<br>[**みまもりサポート**](https://www.alsok.co.jp/)<br>（レンタル） | ![アルソック_画像](/images/articles/elderly-care-services-comparison/01-1-3.png) | 緊急通報型 | 13,365円（税込） | 2,838円（税込） | 緊急通報と健康相談が可能 |
+| [**セコム**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>[**親の見守りプラン**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>(レンタル) | ![セコム_画像](/images/articles/elderly-care-services-comparison/02-2-2.png) | 緊急通報型 | 工事料48,400円（税込）+20,000円（保証金） | 5,060円（税込） | ペンダント型救急通報機能付き |
+| [**BOCCO emo**](https://www.bocco.me/rental/)<br>[**高齢者見守りロボ**](https://www.bocco.me/rental/)<br>（レンタル） | ![](/images/articles/elderly-care-services-comparison/03-3-1.png) | センサー型 | 0円 | 2,970円（税込）初月無料 | Wi-Fi不要の見守りロボット |
+| [**かんたん見守りプラグ（コンセント型センサー）**](https://homeiot.kddi.com/pr/auhome/cmp_affiliate_plug/index.html?fpc=30.15.7.c9e81d0079b6bc4h.1742918508000) | ![](/images/articles/elderly-care-services-comparison/04-4-1.png) | センサー型 | 8,800円（税込）初月無料 | 539円（税込） | コンセントに挿すだけ見守り |
+| [**ひとり暮らしのおまもり**](https://hitori-omamori.jp/) | ![](/images/articles/elderly-care-services-comparison/05-5-1.png) | センサー型 | 9,240円（税込） | 0円 | 無料で使えるセンサー型 |
+| [**アイシル**](https://aitosys.com/aishiru/medicine.html)<br>[**高齢者見守りシステム**](https://aitosys.com/aishiru/medicine.html)<br>（レンタル） | ![](/images/articles/elderly-care-services-comparison/06-6-1.png) | センサー型 | 21,780円（税込） | 5,060円（税込） | 認知機能低下の早期発見 |
+| [**MANOMA**](https://manoma.jp/entry/parent_care/)<br>[**親の見守りセット**](https://manoma.jp/entry/parent_care/) | ![](/images/articles/elderly-care-services-comparison/07-7.png) | カメラ型 | 2,750円（税込） | 3,278円（税込） | ライブ映像と録画で様子が分かる |
+| [**みまもりCUBE**](https://ramrock-eyes.jp/) | ![](/images/articles/elderly-care-services-comparison/08-8.png) | カメラ型 | 0円 | 5,390円（税込）〜 | 介護保険適応あり｜複数プラン |
+| [**ALSOK**](https://www.alsok.co.jp/person/alboeye/)<br>[**「アルボeye」**](https://www.alsok.co.jp/person/alboeye/) | ![](/images/articles/elderly-care-services-comparison/09-9.png) | カメラ型 | 0円 | 2,750円（税込） | オプションで緊急通報が可能 |
+| [**クロネコ見守りサービス**](https://nekosapo-order2.kuronekoyamato.co.jp/mimamori.html) | ![](/images/articles/elderly-care-services-comparison/10-10.png) | 自宅訪問型 | 0円 | 1,738円（税込） | 電球型センサー+訪問 |
+| [**宅配クック123**](https://takuhaicook123.jp/)<br>[**（弁当宅配）**](https://takuhaicook123.jp/) | ![](/images/articles/elderly-care-services-comparison/11-11.png) | 自宅訪問型 | 0円 | １食500〜1,000円程度(メニューによる) | 送料無料｜65歳以上は初回1食無料 |
+| [**郵便局のみまもりサービス**](https://www.post.japanpost.jp/life/mimamori/) | ![](/images/articles/elderly-care-services-comparison/12-12.png) | 自宅訪問型 | 0円 | 2,500円（税込） | 月1回、郵便局員が自宅訪問 |
+| [**みまもりコール**](https://mimamori-call.com/price/)<br>（電話） | ![](/images/articles/elderly-care-services-comparison/13-13.png) | 電話・アプリ型 | 11,000円（税込） | 3,300円（税込）〜 | 週1コース・週2コース・毎日コース |
+| [**見まもっTELプラス**](https://www.homenet-24.co.jp/service/mimamori/tel_plus/)<br>（電話） | ![](/images/articles/elderly-care-services-comparison/14-14.png) | 電話・アプリ型 | 11,000円（税込） | 1,650円（税込） | 工事不要｜電話回線のみで利用可能 |
+| [みまもり電池](https://mimamori.novars.jp/)<br>[「MaBeee」](https://mimamori.novars.jp/) | ![](/images/articles/elderly-care-services-comparison/15-15.png) | 安否確認型【家電】 | 3,278円（税込） | 1,078円（税込） | TVリモコンなど単三電池の利用をアプリ通知 |
+| [象印のポット](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/)<br>[「みまもりほっとラインiポット」](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/) | ![](/images/articles/elderly-care-services-comparison/16-16.png) | 安否確認型【家電】 | 5,500円（税込） | 3,300円（税込）初月無料 | ポットの使用状況をメールで通知 |
+| [**まもりこ**](https://www.necolico.co.jp/mamolico/#mamolico_buy)<br>[**冷蔵庫設置センサー**](https://www.necolico.co.jp/mamolico/#mamolico_buy) | ![](/images/articles/elderly-care-services-comparison/17-17.png) | 安否確認型【家電】 | 端末台：13,200円（税込） | 550円（税込） | Wi-Fi不要｜コンセントにつなぐだけ |
+| [TVの接続センサー](https://mirumoni.com/)<br>[「MIRUMONI」](https://mirumoni.com/) | ![](/images/articles/elderly-care-services-comparison/18-18.png) | 安否確認型【家電】 | 0円 | 2,860円（税込） | HDMIケーブルでテレビに接続 |
 
 コストと安心のバランスを考慮した最適な選択ができるよう、幅広く情報をお届けします。
 
@@ -87,7 +87,7 @@ tone: sky
 
 ## 高齢者見守りサービス６種類｜メリット・デメリット
 
-![高齢者向け見守りサービスの種類](https://sonocafe.xyz/wp-content/uploads/2025/03/2-3-1024x576.jpg)
+![高齢者向け見守りサービスの種類](/images/articles/elderly-care-services-comparison/19-2-3-1024x576.jpg)
 
 **高齢者見守りサービス６種類**
 
@@ -110,7 +110,7 @@ tone: sky
 
 ### 緊急通報型
 
-![高齢者向け見守りサービスの種類](https://sonocafe.xyz/wp-content/uploads/2025/03/12-2-1024x576.jpg)
+![高齢者向け見守りサービスの種類](/images/articles/elderly-care-services-comparison/20-12-2-1024x576.jpg)
 
 緊急通報型の見守りサービスでは、高齢者が身につける「ペンダント型」の通報装置があります。
 
@@ -140,7 +140,7 @@ tone: sky
 
 ### センサー型
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/13-2-1024x576.jpg)
+![](/images/articles/elderly-care-services-comparison/21-13-2-1024x576.jpg)
 
 センサー型の見守りサービスは、日常生活の中で**さりげない見守り**が実現可能です。
 
@@ -172,7 +172,7 @@ tone: sky
 
 ### カメラ型
 
-![見守りサービスの種類　緊急通報　センサー　カメラ　自宅訪問　電話アプリ　安否確認](https://sonocafe.xyz/wp-content/uploads/2025/03/14-2-1024x576.jpg)
+![見守りサービスの種類　緊急通報　センサー　カメラ　自宅訪問　電話アプリ　安否確認](/images/articles/elderly-care-services-comparison/22-14-2-1024x576.jpg)
 
 カメラ型の見守りサービスは、自宅にカメラを設置してスマホで映像確認ができる仕組みです。
 
@@ -202,7 +202,7 @@ tone: sky
 
 ### 自宅訪問型
 
-![高齢者向け見守りサービスの種類を紹介する図](https://sonocafe.xyz/wp-content/uploads/2025/03/15-1-1-1024x576.jpg)
+![高齢者向け見守りサービスの種類を紹介する図](/images/articles/elderly-care-services-comparison/23-15-1-1-1024x576.jpg)
 
 自宅訪問型の見守りサービスは、**定期的に自宅を訪問**して安否確認を行うシステムです。
 
@@ -234,7 +234,7 @@ tone: sky
 
 ### 電話・アプリ型
 
-![6種類の高齢者見守りサービス早見表](https://sonocafe.xyz/wp-content/uploads/2025/03/４０歳からの-1024x576.jpg)
+![6種類の高齢者見守りサービス早見表](/images/articles/elderly-care-services-comparison/24-______-1024x576.jpg)
 
 アプリ型の見守りサービスは、スマホやタブレットに**アプリをインストール**するだけで安否確認が可能です。
 
@@ -266,7 +266,7 @@ tone: sky
 
 ### 安否確認型
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/17-1-1-1024x576.jpg)
+![](/images/articles/elderly-care-services-comparison/25-17-1-1-1024x576.jpg)
 
 家電を用いた安否確認型の見守りサービスは、電気ポットや電球などの**日常的に使用する家電**に見守り機能を付加したシステムです。
 
@@ -308,7 +308,7 @@ tone: sky
 
 ## 高齢者見守りサービスの選び方｜３ステップ
 
-![介護選び3ステップ](https://sonocafe.xyz/wp-content/uploads/2025/03/9-1-1024x576.jpg)
+![介護選び3ステップ](/images/articles/elderly-care-services-comparison/26-9-1-1024x576.jpg)
 
 **高齢者見守りサービスの選び方３ステップ**
 
@@ -412,7 +412,7 @@ tone: sky
 
 ## 高齢者見守りサービスを選ぶとき｜6つのポイント
 
-![選ぶときのポイント6つ](https://sonocafe.xyz/wp-content/uploads/2025/03/10-1-1024x576.jpg)
+![選ぶときのポイント6つ](/images/articles/elderly-care-services-comparison/27-10-1-1024x576.jpg)
 
 **高齢者見守りサービスを選ぶとき｜6つのポイント**
 
@@ -558,7 +558,7 @@ tone: sky
 
 **各サービスの位置づけ：月額費用×緊急時の対応能力**
 
-![ホームセキュリティの月額費用と緊急時対応能力を比較したグラフ](https://sonocafe.xyz/wp-content/uploads/2025/03/5-2-2-1024x576.jpg)
+![ホームセキュリティの月額費用と緊急時対応能力を比較したグラフ](/images/articles/elderly-care-services-comparison/28-5-2-2-1024x576.jpg)
 
 **高齢者見守りサービス**はザックリと6種類ありますが、各サービスの**「月額費用」**と**「緊急時の対応能力」**の関係性は上記の通りです。
 
@@ -587,24 +587,24 @@ tone: sky
 
 | サービス名 |  | サービスの種類 | 初期費用 | 月額の費用 | サービスの特徴 |
 | --- | --- | --- | --- | --- | --- |
-| [**ALSOK**](https://www.alsok.co.jp/)<br>[**みまもりサポート**](https://www.alsok.co.jp/)<br>（レンタル） | ![アルソック_画像](https://sonocafe.xyz/wp-content/uploads/2025/03/1-3.png) | 緊急通報型 | 13,365円（税込） | 2,838円（税込） | 緊急通報と健康相談が可能 |
-| [**セコム**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>[**親の見守りプラン**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>(レンタル) | ![セコム_画像](https://sonocafe.xyz/wp-content/uploads/2025/03/2-2.png) | 緊急通報型 | 工事料48,400円（税込）+20,000円（保証金） | 5,060円（税込） | ペンダント型救急通報機能付き |
-| [**BOCCO emo**](https://www.bocco.me/rental/)<br>[**高齢者見守りロボ**](https://www.bocco.me/rental/)<br>（レンタル） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/3-1.png) | センサー型 | 0円 | 2,970円（税込）初月無料 | Wi-Fi不要の見守りロボット |
-| [**かんたん見守りプラグ（コンセント型センサー）**](https://homeiot.kddi.com/pr/auhome/cmp_affiliate_plug/index.html?fpc=30.15.7.c9e81d0079b6bc4h.1742918508000) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/4-1.png) | センサー型 | 8,800円（税込）初月無料 | 539円（税込） | コンセントに挿すだけ見守り |
-| [**ひとり暮らしのおまもり**](https://hitori-omamori.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/5-1.png) | センサー型 | 9,240円（税込） | 0円 | 無料で使えるセンサー型 |
-| [**アイシル**](https://aitosys.com/aishiru/medicine.html)<br>[**高齢者見守りシステム**](https://aitosys.com/aishiru/medicine.html)<br>（レンタル） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/6-1.png) | センサー型 | 21,780円（税込） | 5,060円（税込） | 認知機能低下の早期発見 |
-| [**MANOMA**](https://manoma.jp/entry/parent_care/)<br>[**親の見守りセット**](https://manoma.jp/entry/parent_care/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/7.png) | カメラ型 | 2,750円（税込） | 3,278円（税込） | ライブ映像と録画で様子が分かる |
-| [**みまもりCUBE**](https://ramrock-eyes.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/8.png) | カメラ型 | 0円 | 5,390円（税込）〜 | 介護保険適応あり｜複数プラン |
-| [**ALSOK**](https://www.alsok.co.jp/person/alboeye/)<br>[**「アルボeye」**](https://www.alsok.co.jp/person/alboeye/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/9.png) | カメラ型 | 0円 | 2,750円（税込） | オプションで緊急通報が可能 |
-| [**クロネコ見守りサービス**](https://nekosapo-order2.kuronekoyamato.co.jp/mimamori.html) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/10.png) | 自宅訪問型 | 0円 | 1,738円（税込） | 電球型センサー+訪問 |
-| [**宅配クック123**](https://takuhaicook123.jp/)<br>[**（弁当宅配）**](https://takuhaicook123.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/11.png) | 自宅訪問型 | 0円 | １食500〜1,000円程度(メニューによる) | 送料無料｜65歳以上は初回1食無料 |
-| [**郵便局のみまもりサービス**](https://www.post.japanpost.jp/life/mimamori/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/12.png) | 自宅訪問型 | 0円 | 2,500円（税込） | 月1回、郵便局員が自宅訪問 |
-| [**みまもりコール**](https://mimamori-call.com/price/)<br>（電話） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/13.png) | 電話・アプリ型 | 11,000円（税込） | 3,300円（税込）〜 | 週1コース・週2コース・毎日コース |
-| [**見まもっTELプラス**](https://www.homenet-24.co.jp/service/mimamori/tel_plus/)<br>（電話） | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/14.png) | 電話・アプリ型 | 11,000円（税込） | 1,650円（税込） | 工事不要｜電話回線のみで利用可能 |
-| [みまもり電池](https://mimamori.novars.jp/)<br>[「MaBeee」](https://mimamori.novars.jp/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/15.png) | 安否確認型【家電】 | 3,278円（税込） | 1,078円（税込） | TVリモコンなど単三電池の利用をアプリ通知 |
-| [象印のポット](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/)<br>[「みまもりほっとラインiポット」](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/16.png) | 安否確認型【家電】 | 5,500円（税込） | 3,300円（税込）初月無料 | ポットの使用状況をメールで通知 |
-| [**まもりこ**](https://www.necolico.co.jp/mamolico/#mamolico_buy)<br>[**冷蔵庫設置センサー**](https://www.necolico.co.jp/mamolico/#mamolico_buy) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/17.png) | 安否確認型【家電】 | 端末台：13,200円（税込） | 550円（税込） | Wi-Fi不要｜コンセントにつなぐだけ |
-| [TVの接続センサー](https://mirumoni.com/)<br>[「MIRUMONI」](https://mirumoni.com/) | ![](https://sonocafe.xyz/wp-content/uploads/2025/03/18.png) | 安否確認型【家電】 | 0円 | 2,860円（税込） | HDMIケーブルでテレビに接続 |
+| [**ALSOK**](https://www.alsok.co.jp/)<br>[**みまもりサポート**](https://www.alsok.co.jp/)<br>（レンタル） | ![アルソック_画像](/images/articles/elderly-care-services-comparison/01-1-3.png) | 緊急通報型 | 13,365円（税込） | 2,838円（税込） | 緊急通報と健康相談が可能 |
+| [**セコム**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>[**親の見守りプラン**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)<br>(レンタル) | ![セコム_画像](/images/articles/elderly-care-services-comparison/02-2-2.png) | 緊急通報型 | 工事料48,400円（税込）+20,000円（保証金） | 5,060円（税込） | ペンダント型救急通報機能付き |
+| [**BOCCO emo**](https://www.bocco.me/rental/)<br>[**高齢者見守りロボ**](https://www.bocco.me/rental/)<br>（レンタル） | ![](/images/articles/elderly-care-services-comparison/03-3-1.png) | センサー型 | 0円 | 2,970円（税込）初月無料 | Wi-Fi不要の見守りロボット |
+| [**かんたん見守りプラグ（コンセント型センサー）**](https://homeiot.kddi.com/pr/auhome/cmp_affiliate_plug/index.html?fpc=30.15.7.c9e81d0079b6bc4h.1742918508000) | ![](/images/articles/elderly-care-services-comparison/04-4-1.png) | センサー型 | 8,800円（税込）初月無料 | 539円（税込） | コンセントに挿すだけ見守り |
+| [**ひとり暮らしのおまもり**](https://hitori-omamori.jp/) | ![](/images/articles/elderly-care-services-comparison/05-5-1.png) | センサー型 | 9,240円（税込） | 0円 | 無料で使えるセンサー型 |
+| [**アイシル**](https://aitosys.com/aishiru/medicine.html)<br>[**高齢者見守りシステム**](https://aitosys.com/aishiru/medicine.html)<br>（レンタル） | ![](/images/articles/elderly-care-services-comparison/06-6-1.png) | センサー型 | 21,780円（税込） | 5,060円（税込） | 認知機能低下の早期発見 |
+| [**MANOMA**](https://manoma.jp/entry/parent_care/)<br>[**親の見守りセット**](https://manoma.jp/entry/parent_care/) | ![](/images/articles/elderly-care-services-comparison/07-7.png) | カメラ型 | 2,750円（税込） | 3,278円（税込） | ライブ映像と録画で様子が分かる |
+| [**みまもりCUBE**](https://ramrock-eyes.jp/) | ![](/images/articles/elderly-care-services-comparison/08-8.png) | カメラ型 | 0円 | 5,390円（税込）〜 | 介護保険適応あり｜複数プラン |
+| [**ALSOK**](https://www.alsok.co.jp/person/alboeye/)<br>[**「アルボeye」**](https://www.alsok.co.jp/person/alboeye/) | ![](/images/articles/elderly-care-services-comparison/09-9.png) | カメラ型 | 0円 | 2,750円（税込） | オプションで緊急通報が可能 |
+| [**クロネコ見守りサービス**](https://nekosapo-order2.kuronekoyamato.co.jp/mimamori.html) | ![](/images/articles/elderly-care-services-comparison/10-10.png) | 自宅訪問型 | 0円 | 1,738円（税込） | 電球型センサー+訪問 |
+| [**宅配クック123**](https://takuhaicook123.jp/)<br>[**（弁当宅配）**](https://takuhaicook123.jp/) | ![](/images/articles/elderly-care-services-comparison/11-11.png) | 自宅訪問型 | 0円 | １食500〜1,000円程度(メニューによる) | 送料無料｜65歳以上は初回1食無料 |
+| [**郵便局のみまもりサービス**](https://www.post.japanpost.jp/life/mimamori/) | ![](/images/articles/elderly-care-services-comparison/12-12.png) | 自宅訪問型 | 0円 | 2,500円（税込） | 月1回、郵便局員が自宅訪問 |
+| [**みまもりコール**](https://mimamori-call.com/price/)<br>（電話） | ![](/images/articles/elderly-care-services-comparison/13-13.png) | 電話・アプリ型 | 11,000円（税込） | 3,300円（税込）〜 | 週1コース・週2コース・毎日コース |
+| [**見まもっTELプラス**](https://www.homenet-24.co.jp/service/mimamori/tel_plus/)<br>（電話） | ![](/images/articles/elderly-care-services-comparison/14-14.png) | 電話・アプリ型 | 11,000円（税込） | 1,650円（税込） | 工事不要｜電話回線のみで利用可能 |
+| [みまもり電池](https://mimamori.novars.jp/)<br>[「MaBeee」](https://mimamori.novars.jp/) | ![](/images/articles/elderly-care-services-comparison/15-15.png) | 安否確認型【家電】 | 3,278円（税込） | 1,078円（税込） | TVリモコンなど単三電池の利用をアプリ通知 |
+| [象印のポット](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/)<br>[「みまもりほっとラインiポット」](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/) | ![](/images/articles/elderly-care-services-comparison/16-16.png) | 安否確認型【家電】 | 5,500円（税込） | 3,300円（税込）初月無料 | ポットの使用状況をメールで通知 |
+| [**まもりこ**](https://www.necolico.co.jp/mamolico/#mamolico_buy)<br>[**冷蔵庫設置センサー**](https://www.necolico.co.jp/mamolico/#mamolico_buy) | ![](/images/articles/elderly-care-services-comparison/17-17.png) | 安否確認型【家電】 | 端末台：13,200円（税込） | 550円（税込） | Wi-Fi不要｜コンセントにつなぐだけ |
+| [TVの接続センサー](https://mirumoni.com/)<br>[「MIRUMONI」](https://mirumoni.com/) | ![](/images/articles/elderly-care-services-comparison/18-18.png) | 安否確認型【家電】 | 0円 | 2,860円（税込） | HDMIケーブルでテレビに接続 |
 
 もちろん、６種類のタイプ別に12社のサービス内容や料金を比較しているので、参考にして下さい…！
 
@@ -618,7 +618,7 @@ tone: sky
 
 ### 緊急通報型：２社
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/6-3-1024x576.jpg)
+![](/images/articles/elderly-care-services-comparison/29-6-3-1024x576.jpg)
 
 **緊急通報型：２社**
 
@@ -639,7 +639,7 @@ tone: sky
 
 #### HOME ALSOK（アルソック）みまもりサポート
 
-![アルソックのホームセキュリティ高齢者向けサービス紹介](https://sonocafe.xyz/wp-content/uploads/2025/03/19-1-1024x576.png)
+![アルソックのホームセキュリティ高齢者向けサービス紹介](/images/articles/elderly-care-services-comparison/30-19-1-1024x576.png)
 
 [**ALSOKみまもりサポート**](https://www.alsok.co.jp/)は、緊急時のボタン一つで警備員が駆けつける安心のサービスです。
 
@@ -658,7 +658,7 @@ tone: sky
 
 **ALSOKみまもりサポートのおすすめポイント**
 
-![アルソック\_画像](https://sonocafe.xyz/wp-content/uploads/2025/03/1-3.png)
+![アルソック\_画像](/images/articles/elderly-care-services-comparison/01-1-3.png)
 
 -   **緊急時の駆けつけ対応**  
     ガードマンが現場へ直行
@@ -683,7 +683,7 @@ tone: sky
 
 #### セコム・ホームセキュリティ 親の見守りプラン
 
-![セコムのホームセキュリティ見守りサービス紹介ページ](https://sonocafe.xyz/wp-content/uploads/2025/03/18-1-1-1024x576.jpg)
+![セコムのホームセキュリティ見守りサービス紹介ページ](/images/articles/elderly-care-services-comparison/31-18-1-1-1024x576.jpg)
 
 [**セコム親の見守りプラン**](https://www.secom.co.jp/homesecurity/price/?plan_type=seniorparents&link=hs_top)は、緊急通報機能に加え、火災・ガス漏れ・侵入などの住宅セキュリティも備えた総合的なサービスです。
 
@@ -698,7 +698,7 @@ tone: sky
 
 **セコム・ホームセキュリティ 親の見守りプランのおすすめポイント**
 
-![セコム\_画像](https://sonocafe.xyz/wp-content/uploads/2025/03/2-2.png)
+![セコム\_画像](/images/articles/elderly-care-services-comparison/02-2-2.png)
 
 -   **緊急時に24時間365日駆けつけ対応**  
     急病やケガの際に迅速な救急対応
@@ -721,7 +721,7 @@ tone: sky
 
 ### センサー型：4社
 
-![センサー型見守りシステムと高齢者のイラスト](https://sonocafe.xyz/wp-content/uploads/2025/03/7-3-1024x576.jpg)
+![センサー型見守りシステムと高齢者のイラスト](/images/articles/elderly-care-services-comparison/32-7-3-1024x576.jpg)
 
 **センサー型：4社**
 
@@ -742,7 +742,7 @@ tone: sky
 
 #### BOCCO emo LTEモデル Powered by ネコリコ（ロボット型）
 
-![白くて丸い小型ロボットBOCCO emo](https://sonocafe.xyz/wp-content/uploads/2025/03/15-1-1024x576.jpg)
+![白くて丸い小型ロボットBOCCO emo](/images/articles/elderly-care-services-comparison/33-15-1-1024x576.jpg)
 
 [**BOCCO emo（高齢者見守りロボット）**](https://www.bocco.me/rental/)は、かわいらしい見守りロボットで、高齢者とのコミュニケーションも楽しめるのが特徴です。
 
@@ -756,7 +756,7 @@ tone: sky
 
 **BOCCO emo（高齢者見守りロボット）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/3-1.png)
+![](/images/articles/elderly-care-services-comparison/03-3-1.png)
 
 -   **WiFi不要で見守り機能が充実**  
     センサーで生活状況を確認できる
@@ -779,7 +779,7 @@ tone: sky
 
 #### かんたん見守りプラグ（コンセント型センサー）
 
-![かんたん見守りプラグで高齢者・子供・ペットの見守りと家の防犯ができるサービス](https://sonocafe.xyz/wp-content/uploads/2025/03/16-1-1024x576.jpg)
+![かんたん見守りプラグで高齢者・子供・ペットの見守りと家の防犯ができるサービス](/images/articles/elderly-care-services-comparison/34-16-1-1024x576.jpg)
 
 [**かんたん見守りプラグ（コンセント型センサー）**](https://homeiot.kddi.com/pr/auhome/cmp_affiliate_plug/index.html?fpc=30.15.7.c9e81d0079b6bc4h.1742918508000)は、コンセントに差し込むだけで使えます。
 
@@ -794,7 +794,7 @@ tone: sky
 
 **かんたん見守りプラグ（コンセント型センサー）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/4-1.png)
+![](/images/articles/elderly-care-services-comparison/04-4-1.png)
 
 -   **Wi-Fi不要で**コ**ンセントに指すだけ**  
     コンセントに挿仕込むだけで使える
@@ -817,7 +817,7 @@ tone: sky
 
 #### ひとり暮らしのおまもり（超小型センサー）
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/４０歳からの-1-1024x576.jpg)
+![](/images/articles/elderly-care-services-comparison/35-______-1-1024x576.jpg)
 
 [**ひとり暮らしのおまもり（超小型センサー）**](https://hitori-omamori.jp/)は、超小型のセンサーを使用した見守りサービスです。
 
@@ -832,7 +832,7 @@ tone: sky
 
 **ひとり暮らしのおまもり（超小型センサー）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/5-1.png)
+![](/images/articles/elderly-care-services-comparison/05-5-1.png)
 
 -   **手軽に始められる見守りサービス**  
     毎日開けるドアにセンサーを貼るだけでOK
@@ -855,7 +855,7 @@ tone: sky
 
 #### センサー型「アイシル」
 
-![アイシル 認知機能低下の早期気づき支援 見守りプラス認知](https://sonocafe.xyz/wp-content/uploads/2025/03/18-1-1024x576.jpg)
+![アイシル 認知機能低下の早期気づき支援 見守りプラス認知](/images/articles/elderly-care-services-comparison/36-18-1-1024x576.jpg)
 
 [**アイシル（センサー型高齢者見守りシステム）**](https://aitosys.com/aishiru/medicine.html)は電気の使用状況や室温変化から生活リズムを検知するセンサーです。
 
@@ -871,7 +871,7 @@ tone: sky
 
 **アイシル（センサー型高齢者見守りシステム）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/6-1.png)
+![](/images/articles/elderly-care-services-comparison/06-6-1.png)
 
 -   **薬の飲み忘れを防ぐ**  
     飲み忘れ防止アラームで服薬状況を通知
@@ -894,7 +894,7 @@ tone: sky
 
 ### カメラ型：3社
 
-![カメラ型見守りシステム](https://sonocafe.xyz/wp-content/uploads/2025/03/8-2-1024x576.jpg)
+![カメラ型見守りシステム](/images/articles/elderly-care-services-comparison/37-8-2-1024x576.jpg)
 
 **カメラ型：3社**
 
@@ -914,7 +914,7 @@ tone: sky
 
 #### MANOMA 親の見守りセット
 
-![マノマ親の見守りセット紹介 笑顔の女性とスマホを見る男性 安心安全機能の説明](https://sonocafe.xyz/wp-content/uploads/2025/03/20-1024x576.jpg)
+![マノマ親の見守りセット紹介 笑顔の女性とスマホを見る男性 安心安全機能の説明](/images/articles/elderly-care-services-comparison/38-20-1024x576.jpg)
 
 [**MANOMA 親の見守りセット**](https://manoma.jp/entry/parent_care/)は、ソニーが提供する室内カメラと開閉センサーを組み合わせたハイブリッド型の見守りサービスです。
 
@@ -929,7 +929,7 @@ tone: sky
 
 **MANOMA 親の見守りセットのおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/7.png)
+![](/images/articles/elderly-care-services-comparison/07-7.png)
 
 -   **リアルタイムで見守り**  
     室内カメラで「今」の様子を確認できる
@@ -952,7 +952,7 @@ tone: sky
 
 #### みまもりCUBE
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/21-1024x576.png)
+![](/images/articles/elderly-care-services-comparison/39-21-1024x576.png)
 
 [**みまもりCUBE**](https://ramrock-eyes.jp/)は、コンセントに差し込むだけで簡単に設置できる見守りカメラです。
 
@@ -965,7 +965,7 @@ tone: sky
 
 **みまもりCUBEのおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/8.png)
+![](/images/articles/elderly-care-services-comparison/08-8.png)
 
 -   **コンセントに挿すだけかんたん設置**  
     QRコード読み取りですぐに使える
@@ -988,7 +988,7 @@ tone: sky
 
 #### アルソック「アルボeye」
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/22-1024x576.png)
+![](/images/articles/elderly-care-services-comparison/40-22-1024x576.png)
 
 [**アルソック「アルボeye」**](https://www.alsok.co.jp/person/alboeye/)は、警備会社ならではの安心感と高性能カメラを組み合わせたサービスです。
 
@@ -1003,7 +1003,7 @@ tone: sky
 
 **アルソック「アルボeye」のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/9.png)
+![](/images/articles/elderly-care-services-comparison/09-9.png)
 
 -   **スマホで簡単チェック**  
     外出先から自宅の様子をスマホで確認できる
@@ -1026,7 +1026,7 @@ tone: sky
 
 ### 自宅訪問型：3社
 
-![自宅療養型 家族と過ごす高齢者のイラスト](https://sonocafe.xyz/wp-content/uploads/2025/03/9-2-1024x576.jpg)
+![自宅療養型 家族と過ごす高齢者のイラスト](/images/articles/elderly-care-services-comparison/41-9-2-1024x576.jpg)
 
 **訪問型：３社**
 
@@ -1046,7 +1046,7 @@ tone: sky
 
 #### クロネコ見守りサービス
 
-![女性と高齢女性が笑顔で会話している様子 クロネコ見守りサービス](https://sonocafe.xyz/wp-content/uploads/2025/03/24-1024x576.jpg)
+![女性と高齢女性が笑顔で会話している様子 クロネコ見守りサービス](/images/articles/elderly-care-services-comparison/42-24-1024x576.jpg)
 
 [**クロネコ見守りサービス**](https://nekosapo-order2.kuronekoyamato.co.jp/mimamori.html?utm_source=google&utm_medium=cpc&utm_campaign=hellolight_usual-ad-gs&utm_content=responsive-simei&gad_source=1&gclid=Cj0KCQjwveK4BhD4ARIsAKy6pMJ-4VzI9mQIKP-PwdPDGOiyzk-tirbLK0wCZdBGFXjKsyArVh-3iWsaAqevEALw_wcB)は、電球交換だけで始められ、異変時にはヤマト運輸スタッフが訪問してくれるサービスです。
 
@@ -1061,7 +1061,7 @@ tone: sky
 
 　**クロネコ見守りサービス のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/10.png)
+![](/images/articles/elderly-care-services-comparison/10-10.png)
 
 -   **電球交換の見守りサポート**  
     自宅の電球を「ハローライト」に交換するだけ
@@ -1084,7 +1084,7 @@ tone: sky
 
 #### 宅配クック123（弁当宅配）
 
-![宅配弁当 ワンツゥスリー 魚と野菜のおかず](https://sonocafe.xyz/wp-content/uploads/2025/03/25-1024x576.jpg)
+![宅配弁当 ワンツゥスリー 魚と野菜のおかず](/images/articles/elderly-care-services-comparison/43-25-1024x576.jpg)
 
 [**宅配クック123（弁当宅配**](https://takuhaicook123.jp/)）は、食事の配達を通じて安否確認を行うサービスです。
 
@@ -1100,7 +1100,7 @@ tone: sky
 
 **宅配クック123（弁当宅配）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/11.png)
+![](/images/articles/elderly-care-services-comparison/11-11.png)
 
 -   **栄養バランスを考えた宅配弁当**  
     好みに合わせて10種類の弁当から選べる
@@ -1123,7 +1123,7 @@ tone: sky
 
 #### 郵便局のみまもりサービス
 
-![郵便局のみまもりサービス 家族と高齢者のイラスト](https://sonocafe.xyz/wp-content/uploads/2025/03/26-1024x576.png)
+![郵便局のみまもりサービス 家族と高齢者のイラスト](/images/articles/elderly-care-services-comparison/44-26-1024x576.png)
 
 [**郵便局のみまもりサービス**](https://www.post.japanpost.jp/life/mimamori/)は、郵便局の社員が月1回訪問して親の様子を確認します。
 
@@ -1137,7 +1137,7 @@ tone: sky
 
 **郵便局のみまもりサービスのおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/12.png)
+![](/images/articles/elderly-care-services-comparison/12-12.png)
 
 -   **定期的な訪問で安心感を提供**  
     月に一度訪問して小さな変化も見逃さない
@@ -1160,7 +1160,7 @@ tone: sky
 
 ### 電話・アプリ型：2社
 
-![高齢者向けスマホアプリ](https://sonocafe.xyz/wp-content/uploads/2025/03/10-2-1024x576.jpg)
+![高齢者向けスマホアプリ](/images/articles/elderly-care-services-comparison/45-10-2-1024x576.jpg)
 
 **電話・アプリ型：２社**
 
@@ -1173,7 +1173,7 @@ tone: sky
 
 #### みまもりコール（電話確認）
 
-![みまもりコール ロゴマーク](https://sonocafe.xyz/wp-content/uploads/2025/03/28-1024x576.png)
+![みまもりコール ロゴマーク](/images/articles/elderly-care-services-comparison/46-28-1024x576.png)
 
 [**みまもりコール**](https://mimamori-call.com/price/)オペレーターが直接電話をかけて親の状況を確認します。
 
@@ -1187,7 +1187,7 @@ tone: sky
 
 **みまもりコールのおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/13.png)
+![](/images/articles/elderly-care-services-comparison/13-13.png)
 
 -   **電話で定期的に安否確認**  
     高齢者の一人暮らしの安否確認を電話確認
@@ -1210,7 +1210,7 @@ tone: sky
 
 #### 見まもっTELプラス（電話確認）（続き）
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/29-1024x576.png)
+![](/images/articles/elderly-care-services-comparison/47-29-1024x576.png)
 
 [**見まもっTELプラス**](https://www.homenet-24.co.jp/service/mimamori/tel_plus/)は、自動音声による安否確認を行うサービスです。
 
@@ -1224,7 +1224,7 @@ tone: sky
 
 **見まもっTELプラスのおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/14.png)
+![](/images/articles/elderly-care-services-comparison/14-14.png)
 
 -   **機器設置や工事不要でかんたん導入**  
     固定電話やスマートフォンで利用できる
@@ -1247,7 +1247,7 @@ tone: sky
 
 ### 安否確認型：４社
 
-![安全機能付き電気ポット](https://sonocafe.xyz/wp-content/uploads/2025/03/11-3-1024x576.jpg)
+![安全機能付き電気ポット](/images/articles/elderly-care-services-comparison/48-11-3-1024x576.jpg)
 
 **安否確認型：４社**
 
@@ -1268,7 +1268,7 @@ tone: sky
 
 #### みまもり電池「MaBeee(マビー)」
 
-![電池を囲む笑顔の家族](https://sonocafe.xyz/wp-content/uploads/2025/03/32-1024x576.jpg)
+![電池を囲む笑顔の家族](/images/articles/elderly-care-services-comparison/49-32-1024x576.jpg)
 
 [**「MaBeee(マビー)」**](https://mimamori.novars.jp/)は**単3電池型のIoTデバイス**です。
 
@@ -1284,7 +1284,7 @@ tone: sky
 
 **【電池】みまもり電池「MaBeee(マビー)」のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/15.png)
+![](/images/articles/elderly-care-services-comparison/15-15.png)
 
 -   **電池をセットして設置**  
     単3電池型なので普段使う家電に入れるだけ
@@ -1307,7 +1307,7 @@ tone: sky
 
 #### 象印みまもりほっとライン（電気ポット型センサー）
 
-![電気ポットとスマホで親子をつなぐみまもりほっとライン](https://sonocafe.xyz/wp-content/uploads/2025/03/34-1024x576.jpg)
+![電気ポットとスマホで親子をつなぐみまもりほっとライン](/images/articles/elderly-care-services-comparison/50-34-1024x576.jpg)
 
 [**象印みまもりほっとラインiポット**](https://www.zojirushi.co.jp/syohin/pot_kettle/mimamori/)は、**電気ポット**の使用状況から安否確認ができるサービスです。
 
@@ -1321,7 +1321,7 @@ tone: sky
 
 **象印みまもりほっとラインiポットのおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/16.png)
+![](/images/articles/elderly-care-services-comparison/16-16.png)
 
 -   **安否をそっと確認**  
     電気ポット利用状況でさりげなく安否確認できる
@@ -1344,7 +1344,7 @@ tone: sky
 
 #### まもりこ（冷蔵庫設置センサー）
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/35-1024x576.jpg)
+![](/images/articles/elderly-care-services-comparison/51-35-1024x576.jpg)
 
 [**まもりこ**](https://www.necolico.co.jp/mamolico/#mamolico_buy)は、**冷蔵庫に設置するだけ**で親の生活リズムがわかる**シンプルなセンサー**です。
 
@@ -1360,7 +1360,7 @@ tone: sky
 
 **まもりこ（冷蔵庫設置センサー）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/17.png)
+![](/images/articles/elderly-care-services-comparison/17-17.png)
 
 -   **冷蔵庫にセットするだけ**  
     異常時のみ通知が届くシステム
@@ -1387,7 +1387,7 @@ tone: sky
 
 #### MIRUMONI（テレビ接続型センサー）
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/36-1024x576.jpg)
+![](/images/articles/elderly-care-services-comparison/52-36-1024x576.jpg)
 
 [**MIRUMONI（テレビ接続型センサー）**](https://mirumoni.com/)は、**テレビと接続するだけ**でスマホからカンタンに見守りができるサービスです。
 
@@ -1401,7 +1401,7 @@ tone: sky
 
 **MIRUMONI（テレビ接続型センサー）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/18.png)
+![](/images/articles/elderly-care-services-comparison/18-18.png)
 
 -   **テレビに接続するだけ**  
     インターネット不要でかんたんに使える
@@ -1426,7 +1426,7 @@ tone: sky
 
 ## 高齢者見守りサービスに関するQ &A
 
-![質問と回答　様々な人が集まるイラスト](https://sonocafe.xyz/wp-content/uploads/2025/03/37-1024x576.jpg)
+![質問と回答　様々な人が集まるイラスト](/images/articles/elderly-care-services-comparison/53-37-1024x576.jpg)
 
 
 
@@ -1506,7 +1506,7 @@ tone: sky
 
 ## まとめ【迷ったらコレ】
 
-![高齢者介護のまとめ](https://sonocafe.xyz/wp-content/uploads/2025/03/38-1024x576.jpg)
+![高齢者介護のまとめ](/images/articles/elderly-care-services-comparison/54-38-1024x576.jpg)
 
 **迷ったらコレを選ぼう：３選**
 
@@ -1526,7 +1526,7 @@ tone: sky
 
 ### 迷ったらコレを試そう① HOME ALSOK みまもりサポート
 
-![高齢の夫婦とアルソックのロゴ 安心できる見守りサービス](https://sonocafe.xyz/wp-content/uploads/2025/03/19-1-1024x576.png)
+![高齢の夫婦とアルソックのロゴ 安心できる見守りサービス](/images/articles/elderly-care-services-comparison/30-19-1-1024x576.png)
 
 [**ALSOKみまもりサポート**](https://www.alsok.co.jp/)は、緊急時のボタン一つで警備員が駆けつける安心のサービスです。
 
@@ -1545,7 +1545,7 @@ tone: sky
 
 **ALSOKみまもりサポートのおすすめポイント**
 
-![アルソックロゴ 青と黄色の背景にアルソックの文字](https://sonocafe.xyz/wp-content/uploads/2025/03/1-3.png)
+![アルソックロゴ 青と黄色の背景にアルソックの文字](/images/articles/elderly-care-services-comparison/01-1-3.png)
 
 -   **緊急時の駆けつけ対応**  
     ガードマンが現場へ直行
@@ -1568,7 +1568,7 @@ tone: sky
 
 ### 迷ったらコレを試そう②BOCCO emo （ロボット型）
 
-![白いロボット BOCCO emo](https://sonocafe.xyz/wp-content/uploads/2025/03/15-1-1024x576.jpg)
+![白いロボット BOCCO emo](/images/articles/elderly-care-services-comparison/33-15-1-1024x576.jpg)
 
 [**BOCCO emo（高齢者見守りロボット）**](https://www.bocco.me/rental/)は、かわいらしい見守りロボットで、高齢者とのコミュニケーションも楽しめるのが特徴です。
 
@@ -1582,7 +1582,7 @@ tone: sky
 
 **BOCCO emo（高齢者見守りロボット）のおすすめポイント**
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/03/3-1.png)
+![](/images/articles/elderly-care-services-comparison/03-3-1.png)
 
 -   **WiFi不要で見守り機能が充実**  
     センサーで生活状況を確認できる
@@ -1605,7 +1605,7 @@ tone: sky
 
 ### 迷ったらコレを試そう③まもりこ（冷蔵庫設置センサー）
 
-![高齢者見守りサービスまもりこ紹介画像](https://sonocafe.xyz/wp-content/uploads/2025/03/35-1024x576.jpg)
+![高齢者見守りサービスまもりこ紹介画像](/images/articles/elderly-care-services-comparison/51-35-1024x576.jpg)
 
 [**まもりこ**](https://www.necolico.co.jp/mamolico/#mamolico_buy)は、**冷蔵庫に設置するだけ**で親の生活リズムがわかる**シンプルなセンサー**です。
 
@@ -1621,7 +1621,7 @@ tone: sky
 
 **まもりこ（冷蔵庫設置センサー）のおすすめポイント**
 
-![まもりず 水引付き和紙風デザイン](https://sonocafe.xyz/wp-content/uploads/2025/03/17.png)
+![まもりず 水引付き和紙風デザイン](/images/articles/elderly-care-services-comparison/17-17.png)
 
 -   **冷蔵庫にセットするだけ**  
     異常時のみ通知が届くシステム

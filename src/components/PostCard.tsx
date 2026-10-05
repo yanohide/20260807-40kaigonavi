@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { formatDateJa } from "@/lib/formatDate";
-import { urlForImage } from "@/sanity/lib/image";
+import { localSrcOf, urlForImage } from "@/sanity/lib/image";
 
 export type PostCardItem = {
   _id: string;
@@ -11,6 +11,7 @@ export type PostCardItem = {
   excerpt?: string;
   heroImage?: {
     asset?: { _ref?: string };
+    src?: string;
     alt?: string;
   } | null;
 };
@@ -25,10 +26,8 @@ export function PostCard({
   const imageWidth = compact ? 420 : 640;
   const imageHeight = compact ? 236 : 360;
   const imageUrl = post.heroImage
-    ? urlForImage(post.heroImage)
-        ?.width(imageWidth)
-        .height(imageHeight)
-        .url()
+    ? (localSrcOf(post.heroImage) ??
+      urlForImage(post.heroImage)?.width(imageWidth).height(imageHeight).url())
     : null;
 
   return (

@@ -89,12 +89,18 @@ export const basePortableComponents: PortableTextComponents = {
   types: {
     image: ({ value }) => {
       const alt = (value?.alt as string) || "";
+      // /images/... のようなサイト内ローカルパス（public 配下）は
+      // Sanity アセットを経由せず、そのまま Next/Image で最適化配信する。
+      const localSrc =
+        typeof value?.src === "string" && value.src.startsWith("/")
+          ? value.src
+          : null;
       const externalSrc =
         typeof value?.src === "string" && /^https?:\/\//i.test(value.src)
           ? value.src
           : null;
       const sanitySrc = urlForImage(value)?.width(1200).url() ?? null;
-      const src = sanitySrc || externalSrc;
+      const src = localSrc || sanitySrc || externalSrc;
       if (!src) return null;
 
       // アフィリエイト計測ピクセル等は表示しない
@@ -127,7 +133,7 @@ export const basePortableComponents: PortableTextComponents = {
       const intrinsicH = h > 0 ? h : 675;
       const requestW = w > 0 ? Math.min(w, 1200) : 1200;
       const optimizedSrc =
-        urlForImage(value)?.width(requestW).url() ?? sanitySrc;
+        localSrc || (urlForImage(value)?.width(requestW).url() ?? sanitySrc);
 
       // 狭い画像・縦長スクショは実寸。章アイキャッチ等は本文幅100%。
       const useNaturalSize =

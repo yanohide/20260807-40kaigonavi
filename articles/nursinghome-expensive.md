@@ -3,7 +3,7 @@ title: "【老後のお金】老人ホームの費用が高い！安くするた
 slug: nursinghome-expensive
 publishedAt: "2025-05-06"
 excerpt: "老人ホーム費用の相場・内訳から、費用を抑える具体策と納得して選ぶポイントを解説。"
-heroImage: https://sonocafe.xyz/wp-content/uploads/2025/05/1.jpg
+heroImage: /images/articles/nursinghome-expensive/01-1.jpg
 heroImageAlt: "老人ホームの費用"
 categories:
   - 老人ホーム選び
@@ -54,7 +54,7 @@ FP2級とケアマネの知識をもとに解説します。この記事を読�
 
 ## 老人ホームの入居費用を安く抑える6つの対策
 
-![費用を抑える方法](https://sonocafe.xyz/wp-content/uploads/2025/05/2-1024x576.jpg)
+![費用を抑える方法](/images/articles/nursinghome-expensive/02-2-1024x576.jpg)
 
 **老人ホームの入居費用を安く抑える6つの対策**
 
@@ -184,7 +184,7 @@ tone: sky
 
 ## 費用に納得して老人ホームに入居する5つのポイント
 
-![老jんホーム　納得](https://sonocafe.xyz/wp-content/uploads/2025/05/3-1024x576.jpg)
+![老jんホーム　納得](/images/articles/nursinghome-expensive/03-3-1024x576.jpg)
 
 **費用に納得して老人ホームに入居する５つのポイント**
 
@@ -289,7 +289,7 @@ tone: sky
 
 ## 老人ホームの費用相場と内訳
 
-![老人ホーム　費用相場](https://sonocafe.xyz/wp-content/uploads/2025/05/4-1024x576.jpg)
+![老人ホーム　費用相場](/images/articles/nursinghome-expensive/04-4-1024x576.jpg)
 
 **老人ホームの費用相場と内訳**
 
@@ -400,7 +400,7 @@ tone: sky
 
 ## 老人ホーム10年間の費用シミュレーション
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/05/5-1024x576.jpg)
+![](/images/articles/nursinghome-expensive/05-5-1024x576.jpg)
 
 **老人ホーム10年間の費用シミュレーション**
 
@@ -476,7 +476,7 @@ tone: sky
 
 ## 在宅サービスを利用すれば老人ホームより安く済む
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/05/6-1024x576.jpg)
+![](/images/articles/nursinghome-expensive/06-6-1024x576.jpg)
 
 **在宅介護サービスの内容**
 
@@ -554,7 +554,7 @@ tone: sky
 
 ## 老人ホーム入居に関してよくある質問
 
-![](https://sonocafe.xyz/wp-content/uploads/2025/05/7-1024x576.jpg)
+![](/images/articles/nursinghome-expensive/07-7-1024x576.jpg)
 
 ### 年金だけで老人ホームの費用をまかなえますか？
 
@@ -578,7 +578,7 @@ tone: sky
 
 ## まとめ：老人ホームの費用が高い場合、正しい対策と納得感が重要
 
-![老人ホーム　高い](https://sonocafe.xyz/wp-content/uploads/2025/05/8-1024x576.jpg)
+![老人ホーム　高い](/images/articles/nursinghome-expensive/08-8-1024x576.jpg)
 
 結論として、**老人ホームの高い費用は適切な対策を取れば、安くできます。**
 

@@ -1680,6 +1680,16 @@ async function normalizeImages(blocks, options = {}) {
         alt: node.alt || "",
       };
     }
+    // /images/... （public 配下のローカルパス）は Sanity へアップロードせず
+    // そのまま src として保持する（レンダラー側でローカル配信する）。
+    if (src.startsWith("/")) {
+      return {
+        _type: "image",
+        _key: key(),
+        src,
+        alt: node.alt || "",
+      };
+    }
     if (!client) return null;
 
     let assetRef = cache.get(src);
@@ -1842,6 +1852,22 @@ export async function uploadImageAsset(client, src, baseDir = process.cwd()) {
   return client.assets.upload("image", buffer, { filename });
 }
 
+/**
+ * /images/... （public 配下のローカルパス）はアップロードせず src パススルー、
+ * それ以外は Sanity へアップロードして asset 参照を返す。
+ */
+async function uploadOrLocalImage(client, src, baseDir, alt) {
+  if (src.startsWith("/")) {
+    return { _type: "image", src, alt };
+  }
+  const asset = await uploadImageAsset(client, src, baseDir);
+  return {
+    _type: "image",
+    asset: { _type: "reference", _ref: asset._id },
+    alt,
+  };
+}
+
 /** speechBubble に話し手別アイコン（Sanity asset）を付与。質問者は3種を順に割り当て */
 async function attachSpeechIcons(blocks, client, baseDir) {
   const cache = new Map();
@@ -1885,12 +1911,7 @@ async function attachSpeechIcons(blocks, client, baseDir) {
       if (next._type === "titledFrame" && next.avatarSrc && !next.avatar) {
         const src = String(next.avatarSrc);
         try {
-          const asset = await uploadImageAsset(client, src, baseDir);
-          next.avatar = {
-            _type: "image",
-            asset: { _type: "reference", _ref: asset._id },
-            alt: "ヤノヒデ",
-          };
+          next.avatar = await uploadOrLocalImage(client, src, baseDir, "ヤノヒデ");
         } catch (err) {
           console.warn(
             `  titledFrame avatar upload failed: ${src} (${err?.message || err})`,
@@ -1900,22 +1921,14 @@ async function attachSpeechIcons(blocks, client, baseDir) {
       }
       if (next._type === "servicePromoCard" && next.iconSrc && !next.icon) {
         const src = String(next.iconSrc);
+        const alt = String(next.iconAlt || next.title || "");
         try {
-          const asset = await uploadImageAsset(client, src, baseDir);
-          next.icon = {
-            _type: "image",
-            asset: { _type: "reference", _ref: asset._id },
-            alt: String(next.iconAlt || next.title || ""),
-          };
+          next.icon = await uploadOrLocalImage(client, src, baseDir, alt);
         } catch (err) {
           console.warn(
             `  servicePromoCard icon upload failed: ${src} (${err?.message || err})`,
           );
-          next.icon = {
-            _type: "image",
-            src,
-            alt: String(next.iconAlt || next.title || ""),
-          };
+          next.icon = { _type: "image", src, alt };
         }
         delete next.iconSrc;
         delete next.iconAlt;
@@ -1923,12 +1936,12 @@ async function attachSpeechIcons(blocks, client, baseDir) {
       if (next._type === "relatedArticleCard" && next.imageSrc && !next.image) {
         const src = String(next.imageSrc);
         try {
-          const asset = await uploadImageAsset(client, src, baseDir);
-          next.image = {
-            _type: "image",
-            asset: { _type: "reference", _ref: asset._id },
-            alt: next.title || "",
-          };
+          next.image = await uploadOrLocalImage(
+            client,
+            src,
+            baseDir,
+            next.title || "",
+          );
         } catch (err) {
           console.warn(
             `  relatedArticleCard image upload failed: ${src} (${err?.message || err})`,
@@ -1940,22 +1953,14 @@ async function attachSpeechIcons(blocks, client, baseDir) {
       if (next._type === "appReachCard") {
         if (next.iconSrc && !next.icon) {
           const src = String(next.iconSrc);
+          const alt = String(next.iconAlt || next.title || "");
           try {
-            const asset = await uploadImageAsset(client, src, baseDir);
-            next.icon = {
-              _type: "image",
-              asset: { _type: "reference", _ref: asset._id },
-              alt: String(next.iconAlt || next.title || ""),
-            };
+            next.icon = await uploadOrLocalImage(client, src, baseDir, alt);
           } catch (err) {
             console.warn(
               `  appReachCard icon upload failed: ${src} (${err?.message || err})`,
             );
-            next.icon = {
-              _type: "image",
-              src,
-              alt: String(next.iconAlt || next.title || ""),
-            };
+            next.icon = { _type: "image", src, alt };
           }
           delete next.iconSrc;
           delete next.iconAlt;
@@ -1970,15 +1975,8 @@ async function attachSpeechIcons(blocks, client, baseDir) {
               }
               const src = String(badge.imageSrc);
               try {
-                const asset = await uploadImageAsset(client, src, baseDir);
-                return {
-                  url: badge.url,
-                  image: {
-                    _type: "image",
-                    asset: { _type: "reference", _ref: asset._id },
-                    alt: "",
-                  },
-                };
+                const image = await uploadOrLocalImage(client, src, baseDir, "");
+                return { url: badge.url, image };
               } catch (err) {
                 console.warn(
                   `  appReachCard store badge upload failed: ${src} (${err?.message || err})`,
