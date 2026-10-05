@@ -34,7 +34,9 @@ export function tokenizeCellMarkdown(input: string): Token[] {
       continue;
     }
 
-    const img = src.slice(i).match(/^!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)/);
+    const img = src
+      .slice(i)
+      .match(/^!\[([^\]]*)\]\(((?:https?:\/\/|\/)[^)\s]+)\)/);
     if (img) {
       tokens.push({ type: "image", alt: img[1], src: img[2] });
       i += img[0].length;

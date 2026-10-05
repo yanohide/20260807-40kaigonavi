@@ -22,7 +22,7 @@ function cellAlignClass(cell: string | undefined): string {
 
 function isIconCell(cell: string | undefined): boolean {
   const t = String(cell ?? "").trim();
-  return /^!\[[^\]]*\]\(https?:\/\/[^)\s]+\)$/.test(t);
+  return /^!\[[^\]]*\]\((?:https?:\/\/|\/)[^)\s]+\)$/.test(t);
 }
 
 /**
