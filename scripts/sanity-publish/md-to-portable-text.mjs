@@ -1517,6 +1517,16 @@ function isFaqH2(block) {
   );
 }
 
+/** 「まとめ」「参考文献」「出典一覧」などの H3 は Q&A 項目ではなく
+ * 新しいセクションの開始とみなし、Q&A 抽出をそこで打ち切る。 */
+function isQaBoundaryH3(block) {
+  if (!isHeading(block, "h3")) return false;
+  const t = blockPlainText(block).replace(/\s+/g, "");
+  return (
+    t.startsWith("まとめ") || t.includes("参考文献") || t.includes("出典一覧")
+  );
+}
+
 function normalizeAnswerBlocks(blocks) {
   return (blocks || []).map((b) => {
     if (b?._type === "block" && b.style === "blockquote") {
@@ -1553,6 +1563,7 @@ function extractQaBlocks(blocks) {
 
     const items = [];
     while (i < blocks.length && !isHeading(blocks[i], "h2")) {
+      if (isQaBoundaryH3(blocks[i])) break;
       if (isHeading(blocks[i], "h3")) {
         const question = blockPlainText(blocks[i]).replace(/^\*+|\*+$/g, "").trim();
         i++;

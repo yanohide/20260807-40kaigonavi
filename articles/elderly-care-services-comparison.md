@@ -1504,7 +1504,7 @@ tone: sky
 
 [**みまもりCUBE**](https://ramrock-eyes.jp/)はお試し期間あり
 
-## まとめ【迷ったらコレ】
+### まとめ【迷ったらコレ】
 
 ![高齢者介護のまとめ](https://sonocafe.xyz/wp-content/uploads/2025/03/38-1024x576.jpg)
 
