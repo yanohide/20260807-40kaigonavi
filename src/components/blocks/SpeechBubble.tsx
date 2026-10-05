@@ -80,7 +80,7 @@ export function SpeechBubble({ value }: { value?: SpeechBubbleValue }) {
       </div>
 
       <div
-        className={`speech-bubble-body relative z-0 min-w-0 flex-1 border border-[var(--color-bubble-border)] bg-[var(--color-bubble)] px-5 py-3 text-[0.95rem] leading-[1.85] tracking-[0.06em] text-[var(--color-ink)] ${
+        className={`speech-bubble-body relative z-0 min-w-0 max-w-full border border-[var(--color-bubble-border)] bg-[var(--color-bubble)] px-5 py-3 text-[0.95rem] leading-[1.85] tracking-[0.06em] text-[var(--color-ink)] ${
           isRight ? "border-r-0" : "border-l-0"
         }`}
       >
