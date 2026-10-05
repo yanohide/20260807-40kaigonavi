@@ -56,7 +56,7 @@ export function SpeechBubble({ value }: { value?: SpeechBubbleValue }) {
 
   return (
     <div
-      className={`speech-bubble not-prose my-8 flex w-3/4 max-w-full items-end gap-3 ${
+      className={`speech-bubble not-prose my-8 flex w-full max-w-full items-end gap-3 ${
         isRight ? "ml-auto flex-row-reverse" : "mr-auto flex-row"
       }`}
     >
