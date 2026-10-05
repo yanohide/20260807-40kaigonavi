@@ -88,13 +88,20 @@ function cellBlocksToMarkdown(blocks) {
 }
 
 function mapTableToSanityTable({ context, value }) {
+  const restoreBr = (text) =>
+    text
+      .split(TABLE_BR_SENTINEL)
+      .join("<br>")
+      // 装飾（太字・リンク）で span が分かれる場合、再構成時の inline.join("<br>")
+      // と重なって <br> が連続することがあるため、1つに畳み込む。
+      .replace(/(?:<br>\s*){2,}/gi, "<br>");
   const rows = (value.rows || []).map((row) => ({
     _key: row._key || context.keyGenerator(),
     cells: (row.cells || []).map((cell) => {
       const blocks = cell.value || [];
       const rich = cellBlocksToMarkdown(blocks);
-      if (rich) return rich;
-      return toPlainText(blocks).replace(/\s+/g, " ").trim();
+      if (rich) return restoreBr(rich);
+      return restoreBr(toPlainText(blocks).replace(/\s+/g, " ").trim());
     }),
   }));
   return {
@@ -127,6 +134,24 @@ const markdownOptions = {
 /** `> 引用` は通常段落にする */
 function preprocessMarkdownBlockquotes(md) {
   return md.replace(/^>\s?(.*)$/gm, "$1");
+}
+
+/**
+ * 表セル内の `<br>` は、前後が装飾のない地の文どうしだと
+ * markdownToPortableText 側で消えてしまう（break ノード化されない）。
+ * 表の行だけ、先にプレーンな目印文字へ退避しておき、
+ * セルのテキスト化（mapTableToSanityTable）後に `<br>` へ戻す。
+ */
+const TABLE_BR_SENTINEL = "⁣BR⁣";
+function preprocessTableCellBreaks(md) {
+  return String(md || "")
+    .split("\n")
+    .map((line) =>
+      /^\s*\|.*\|\s*$/.test(line)
+        ? line.replace(/<br\s*\/?>/gi, TABLE_BR_SENTINEL)
+        : line,
+    )
+    .join("\n");
 }
 
 /**
@@ -2016,6 +2041,7 @@ export async function mdToPortableText(markdown, options = {}) {
   }
 
   let md = preprocessMarkdownBlockquotes(markdown);
+  md = preprocessTableCellBreaks(md);
   md = preprocessRelatedArticleCards(md);
   md = preprocessAppReachCards(md);
   md = preprocessAffiliateCtas(md);
