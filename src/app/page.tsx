@@ -62,7 +62,11 @@ export default async function HomePage() {
           <aside className="home-sidebar">
             <SidebarSearchForm />
             <OperatorProfileWidget />
-            <SidebarPostPanel title="人気記事" posts={popularPosts} />
+            <SidebarPostPanel
+              title="人気記事"
+              posts={popularPosts}
+              variant="popular"
+            />
             <SidebarPostPanel title="おすすめ記事" posts={recommendedPosts} />
             <div className="profile-panel">
               <h2 className="section-heading">カテゴリー</h2>

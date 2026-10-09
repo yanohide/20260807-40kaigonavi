@@ -16,13 +16,20 @@ export type SidebarPostItem = {
 type SidebarPostPanelProps = {
   title: string;
   posts: SidebarPostItem[];
+  variant?: "popular" | "recommended";
 };
 
-export function SidebarPostPanel({ title, posts }: SidebarPostPanelProps) {
+export function SidebarPostPanel({
+  title,
+  posts,
+  variant,
+}: SidebarPostPanelProps) {
   if (posts.length === 0) return null;
 
   return (
-    <div className="sidebar-post-panel">
+    <div
+      className={`sidebar-post-panel${variant ? ` sidebar-post-panel--${variant}` : ""}`}
+    >
       <h2 className="section-heading">{title}</h2>
       <ul className="sidebar-post-list">
         {posts.map((post) => {

@@ -79,9 +79,7 @@ export const STATIC_PAGES = {
 /** sonocafe.xyz トップメニューと同じ並び（カテゴリのみ） */
 export const GLOBAL_NAV = [
   { label: "高齢者見守り", href: "/pages/elderly-monitoring" },
-  { label: "高齢者便利グッズ", href: "/pages/elderly-goods" },
   { label: "老人ホーム選び", href: "/pages/nursing-home" },
-  { label: "実家じまい", href: "/pages/closing-family-home" },
   { label: "介護の悩み", href: "/pages/care-worries" },
 ] as const;
 

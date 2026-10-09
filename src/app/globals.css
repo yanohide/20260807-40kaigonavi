@@ -988,6 +988,12 @@
   background: var(--color-surface);
 }
 
+/* 人気記事のサムネイルも新着記事カードと同じく左右に余白を入れる */
+.sidebar-post-panel--popular .sidebar-post-thumb {
+  width: calc(100% - 1rem);
+  margin-inline: auto;
+}
+
 .sidebar-post-thumb img {
   display: block;
   width: 100%;
@@ -2286,6 +2292,24 @@
 }
 
 /* 出典一覧：本文より少し小さい文字。箇条書きマーク付き・URL はリンクにしない */
+.article-reference-section {
+  font-size: 0.85rem;
+}
+
+.article-reference-section p,
+.article-reference-section ul,
+.article-reference-section ol,
+.article-reference-section li,
+.reference-link {
+  font-size: inherit;
+}
+
+.reference-link {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
 .source-list {
   margin: 1.25rem 0 0;
   padding-left: 1.25em;

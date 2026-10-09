@@ -1,6 +1,7 @@
 import { type PortableTextComponents } from "@portabletext/react";
 import { toPlainText } from "@portabletext/toolkit";
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 import { AccordionBlock } from "@/components/blocks/AccordionBlock";
 import { AppReachCard } from "@/components/blocks/AppReachCard";
@@ -212,5 +213,22 @@ export const postPortableComponents: PortableTextComponents = {
     appReachCard: AppReachCard,
     servicePromoCard: ServicePromoCard,
     sourceList: SourceList,
+  },
+};
+
+/**
+ * 参考文献・出典セクション用。
+ * 本文中のリンクは通常どおり遷移させる一方、参考文献に添付された
+ * URL は情報として表示するだけにして、リンクとしては扱わない。
+ */
+const referenceLink = ({ children }: { children?: ReactNode }) => (
+  <span className="reference-link">{children}</span>
+);
+
+export const referencePortableComponents: PortableTextComponents = {
+  ...postPortableComponents,
+  marks: {
+    ...postPortableComponents.marks,
+    link: referenceLink,
   },
 };
